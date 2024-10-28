@@ -4,25 +4,22 @@ const GainsSection = () => {
   const benefits = [
     {
       number: "1",
-      title: "In-depth knowledge of",
-      subtitle: "sustainability practices."
+      text: "In-depth knowledge of sustainability practices."
     },
     {
       number: "2",
-      title: "A network of peers",
-      subtitle: "passionate about making a difference."
+      text: "A network of peers passionate about making a difference."
     },
     {
       number: "3",
-      title: "Leadership and",
-      subtitle: "teamwork skills"
+      text: "Leadership and teamwork skills"
     }
   ];
 
   return (
-    <section className="bg-teal-800 py-16 relative overflow-hidden">
+    <section className="bg-[#004C4C] py-16 relative overflow-hidden">
       {/* Decorative leaf */}
-      <div className="absolute right-0 bottom-0">
+      {/* <div className="absolute right-0 bottom-0">
         <svg 
           className="w-32 h-32 text-yellow-400 transform rotate-45" 
           viewBox="0 0 24 24"
@@ -32,16 +29,24 @@ const GainsSection = () => {
             d="M17.75 12.5C17.75 12.5 21 9.25 21 6C21 2.75 17.75 -0.5 17.75 -0.5C14.5 -3.75 11.25 -7 8 -7C4.75 -7 1.5 -3.75 -1.75 -0.5C-1.75 -0.5 -5 2.75 -5 6C-5 9.25 -1.75 12.5 -1.75 12.5C1.5 15.75 4.75 19 8 19C11.25 19 14.5 15.75 17.75 12.5Z"
           />
         </svg>
-      </div>
+      </div> */}
 
       {/* Header */}
-      <div className="bg-yellow-400 py-4 px-4 mb-16">
-        <h2 className="text-3xl font-bold text-center">What You'll Gain?</h2>
+      <div className="bg-yellow-400 p-10">
+        <h2 style={{
+          fontFamily: 'Lato',
+          fontSize: '48px',
+          fontWeight: 800,
+          lineHeight: '57.6px',
+          textAlign: 'center'
+        }} className="text-black-800">
+          What You'll Gain?
+        </h2>
       </div>
 
       {/* Benefits Grid */}
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div className="container mx-auto mt-12">
+        <div className="grid md:grid-cols-3 gap-10 max-w-10xl mx-auto">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
@@ -52,7 +57,7 @@ const GainsSection = () => {
                 w-12 h-12 
                 rounded-full 
                 bg-yellow-400 
-                text-teal-800 
+                text-white
                 text-xl 
                 font-bold 
                 flex 
@@ -69,9 +74,16 @@ const GainsSection = () => {
               </div>
               
               {/* Benefit Text */}
-              <div className="text-white space-y-2">
-                <h3 className="text-xl font-bold">{benefit.title}</h3>
-                <p className="text-lg text-yellow-400">{benefit.subtitle}</p>
+              <div className="text-white">
+                <p style={{
+                  fontFamily: 'Lato',
+                  fontSize: '32px',
+                  fontWeight: 800,
+                  lineHeight: '38.4px',
+                  textAlign: 'center'
+                }} className="text-white">
+                  {benefit.text}
+                </p>
               </div>
             </div>
           ))}

@@ -50,7 +50,7 @@ const BenefitsSlider = () => {
   };
 
   return (
-    <section className="bg-teal-800">
+    <section className="bg-[#004C4C]">
       {/* Header */}
       <div style={{ backgroundColor: '#FFC12D' }} className="py-8 mb-12 w-full text-center">
         <h2 className="text-4xl font-extrabold mb-2 text-black-800 lg:text-[48px] lg:leading-[57.6px]">
