@@ -3,59 +3,95 @@ import { Mail, Clock, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div className="bg-teal-900 text-white py-8 px-6 relative">
-      {/* Decorative leaf */}
-      <div className="absolute top-0 left-0">
-        <div className="w-16 h-16 text-yellow-500 transform -rotate-45">
-          🍃
-        </div>
-      </div>
-
+    <div style={{ background: '#004C4C' }} className="text-white py-8 px-6 relative">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Section - About */}
         <div className="max-w-xl">
-          <h2 className="text-yellow-500 text-2xl font-bold mb-2">
-            About
-          </h2>
-          <h3 className="text-yellow-500 text-xl font-semibold mb-3">
+          <h3 style={{
+            color: '#FFC12D',
+            fontFamily: 'Lato',
+            fontSize: '32px',
+            fontWeight: 800,
+            lineHeight: '38.4px',
+            textAlign: 'left'
+          }} className="mb-3">
+            About<br/>
             SustainaSpark
           </h3>
-          <p className="text-gray-200 mb-6">
+          <p style={{
+            fontFamily: 'Inter',
+            fontSize: '24px',
+            fontWeight: 400,
+            lineHeight: '29.05px',
+            textAlign: 'left'
+          }} className="text-white mb-6">
             The SustainaSpark is an initiative by VONG to empower young minds to take action on crucial environmental issues. Through engaging events and workshops, the project's experience participants will learn how to make sustainability a norm in their communities.
           </p>
           
           {/* Event Details */}
-          <div className="flex items-center gap-2 text-yellow-500">
-            <Clock size={20} />
-            <span>27/10/2024</span>
-            <span className="mx-2">•</span>
-            <span>9:00 AM - 5:30 PM</span>
+          <div className="flex flex-wrap items-center gap-4">
+            <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
+              <Clock size={20} />
+              <span className="whitespace-nowrap">27/10/2024</span>
+            </div>
+            <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
+              <Clock size={20} />
+              <span className="whitespace-nowrap">9:00 AM - 5:30 PM</span>
+            </div>
           </div>
         </div>
 
         {/* Right Section - Contact */}
         <div className="md:text-right">
-          <h2 className="text-yellow-500 text-2xl font-bold mb-4">
+          <h2 style={{
+            color: '#FFC12D',
+            fontFamily: 'Lato',
+            fontSize: '32px',
+            fontWeight: 800,
+            lineHeight: '38.4px',
+            textAlign: 'right'
+          }} className="mb-4">
             Contact Us
           </h2>
-          <p className="text-gray-200 mb-2">
+          <p style={{
+            fontFamily: 'Inter',
+            fontSize: '24px',
+            fontWeight: 400,
+            lineHeight: '29.05px',
+            textAlign: 'right'
+          }} className="text-white mb-4">
             Have questions? We're here to help!
           </p>
           
           {/* Contact Details */}
           <div className="space-y-3">
-            <div className="flex items-center md:justify-end gap-2 text-gray-200">
+            <div className="flex flex-wrap items-center md:justify-end gap-2">
+              <span style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontWeight: 400,
+                lineHeight: '19.36px',
+                textAlign: 'right'
+              }} className="text-white">
+                G-9, Hemkunt Tower, 98 Nehru Place, New Delhi, 110019
+              </span>
               <MapPin size={20} className="text-yellow-500" />
-              <span>7-A, Shastri Nagar, New Delhi 110031</span>
             </div>
-            <div className="flex items-center md:justify-end gap-2 text-gray-200">
-              <Mail size={20} className="text-yellow-500" />
+            <div className="flex flex-wrap items-center md:justify-end gap-2">
               <a 
                 href="mailto:events@vong.earth" 
-                className="hover:text-yellow-500 transition-colors"
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  lineHeight: '19.36px',
+                  textAlign: 'right'
+                }}
+                className="text-white hover:text-yellow-500 transition-colors"
               >
                 events@vong.earth
               </a>
+              <Mail size={20} className="text-yellow-500" />
             </div>
           </div>
         </div>
