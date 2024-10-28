@@ -94,7 +94,7 @@ const HomepageSection2 = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/400/400"
+                src="/images/eventperson.png"
                 alt="Event highlights illustration"
                 className="rounded-full w-full max-w-md"
               />

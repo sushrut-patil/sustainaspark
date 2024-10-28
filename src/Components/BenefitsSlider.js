@@ -8,38 +8,32 @@ const BenefitsSlider = () => {
     {
       title: "Global Awareness",
       description: "Explore critical international sustainability issues.",
-      image: "/api/placeholder/300/300",
-      icon: "🌍"
+      image: "images/whyImages/global.png",
     },
     {
-      title: "Policy Making Skills",
-      description: "Learn to craft and present effective policies.",
-      image: "/api/placeholder/300/300",
-      icon: "📋"
+      title: "Debate Skills",
+      description: "Sharpen public speaking and argumentation abilities.",
+      image: "images/whyImages/debate.png",
     },
     {
-      title: "Networking",
-      description: "Connect with like-minded individuals worldwide.",
-      image: "/api/placeholder/300/300",
-      icon: "🤝"
+      title: "Critical Thinking",
+      description: "Hone your problem-solving and analytical skills..",
+      image: "images/whyImages/critical.png",
     },
     {
-      title: "Leadership Development",
-      description: "Enhance your leadership and decision-making abilities.",
-      image: "/api/placeholder/300/300",
-      icon: "⭐"
+      title: "Be Recognized",
+      description: "Showcase your talent and dedication! Earn certificates and recognition for your contributions to a sustainable future.",
+      image: "images/whyImages/recognized.png",
     },
     {
       title: "Real-World Impact",
-      description: "Contribute to actual sustainability solutions.",
-      image: "/api/placeholder/300/300",
-      icon: "🎯"
+      description: "Apply your knowledge to address global challenges.",
+      image: "images/whyImages/impact.png",
     },
     {
-      title: "Career Growth",
-      description: "Boost your professional profile in sustainability.",
-      image: "/api/placeholder/300/300",
-      icon: "📈"
+      title: "Become a Vongster",
+      description: "VIP Access: Get priority registration for future VONG events and workshops.Mentorship Opportunities: Learn from experienced sustainability leaders and gain invaluable guidance",
+      image: "/images/whyImages/vong.png",
     }
   ];
 
@@ -56,57 +50,74 @@ const BenefitsSlider = () => {
   };
 
   return (
-    <section className="bg-teal-800 py-16">
+    <section className="bg-teal-800">
+      {/* Header */}
+      <div style={{ backgroundColor: '#FFC12D' }} className="py-8 mb-12 w-full text-center">
+        <h2 className="text-4xl font-extrabold mb-2 text-black-800 lg:text-[48px] lg:leading-[57.6px]">
+          Why Join SustainaSpark 4?
+        </h2>
+        <p className="text-teal-800 text-xl font-semibold lg:text-[32px] lg:leading-[38.4px]">
+          Develop Skills for Your Future
+        </p>
+      </div>
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="bg-yellow-400 py-8 px-4 rounded-lg mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-2">Why Join SustainaSpark 4?</h2>
-          <p className="text-teal-800 text-xl">Develop Skills for Your Future</p>
-        </div>
-
         {/* Slider */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           {/* Main content */}
-          <div className="relative min-h-[400px] flex items-center justify-center">
-            <div className="text-center max-w-2xl mx-auto">
+          <div className="relative h-[700px] flex items-center justify-center">
+            <div className="text-center w-full max-w-3xl mx-auto px-16">
               {/* Globe illustration with people */}
-              <div className="relative w-64 h-64 mx-auto mb-8">
+              <div className="relative w-96 h-96 mx-auto">
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
                   className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-6xl">
-                  {slides[currentSlide].icon}
-                </div>
               </div>
               
-              <h3 className="text-yellow-400 text-3xl font-bold mb-4">
-                {slides[currentSlide].title}
-              </h3>
-              <p className="text-white text-lg">
-                {slides[currentSlide].description}
-              </p>
+              {/* Text content container with fixed height */}
+              <div className="h-[200px] flex flex-col justify-start">
+                <h3 className="text-yellow-400"
+                    style={{
+                      fontFamily: 'Lato',
+                      fontSize: '36px',
+                      fontWeight: 800,
+                      lineHeight: '43.2px',
+                      textAlign: 'center'
+                    }}>
+                  {slides[currentSlide].title}
+                </h3>
+                <p className="text-white mt-4 overflow-y-auto"
+                   style={{
+                     fontFamily: 'Lato',
+                     fontSize: '24px',
+                     fontWeight: 800,
+                     lineHeight: '28.8px',
+                     textAlign: 'center'
+                   }}>
+                  {slides[currentSlide].description}
+                </p>
+              </div>
             </div>
+
+            {/* Navigation buttons - positioned relative to the fixed height container */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
+            >
+              <ChevronLeft size={24} className="text-black" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
+            >
+              <ChevronRight size={24} className="text-black" />
+            </button>
           </div>
 
-          {/* Navigation buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
-          >
-            <ChevronLeft size={24} className="text-teal-800" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
-          >
-            <ChevronRight size={24} className="text-teal-800" />
-          </button>
-
           {/* Navigation dots */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 pb-8">
             {slides.map((_, index) => (
               <button
                 key={index}
