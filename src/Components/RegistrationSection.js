@@ -2,29 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CountdownTimer = ({ deadline = "2024-11-09T23:59:00" }) => {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const calculateTimeLeft = () => {
+    const now = new Date().getTime();
+    const target = new Date(deadline).getTime();
+    const difference = target - now;
+    console.log(difference);
+    if (difference > 0) {
+      return {
+        hours: Math.floor((difference) / (1000 * 60 * 60) ),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    } else {
+      return { hours: 0, minutes: 0, seconds: 0 };
+    }
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const now = new Date().getTime();
-      const target = new Date(deadline).getTime();
-      const difference = target - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000)
-        });
-      } else {
-        clearInterval(intervalId);
-      }
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
+    // Clear interval on component unmount or when deadline changes
     return () => clearInterval(intervalId);
   }, [deadline]);
 
