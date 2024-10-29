@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CountdownTimer = ({ deadline = "2024-12-31T23:59:59" }) => {
+const CountdownTimer = ({ deadline = "2024-11-09T23:59:00" }) => {
   const [timeLeft, setTimeLeft] = useState({
-    hours: 15,
-    minutes: 2,
-    seconds: 9
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   });
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const CountdownTimer = ({ deadline = "2024-12-31T23:59:59" }) => {
   const formatNumber = (num) => String(num).padStart(2, '0');
 
   return (
-    <div className="bg-teal-800 text-white p-6 rounded-lg font-mono text-4xl flex justify-center gap-4">
+    <div style={{ background: '#004C4C' }} className="text-white p-6 rounded-lg font-mono text-4xl flex justify-center gap-4">
       <div className="text-center">
         <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.hours)}</div>
         <div className="text-xs mt-1 uppercase">Hours</div>
@@ -58,17 +58,17 @@ const RegistrationSection = () => {
         <div className="text-center space-y-8">
           {/* Title */}
           <div className="space-y-2">
-            <h2 className="font-[Lato] text-[48px] font-bold leading-[57.6px] text-center">
+            <h2 className="font-[Lato] text-[48px] font-bold leading-[57.6px] mb-10 text-center border-b-[5px] border-[#FFC12D]">
               Ready to ignite your changemaker spark?
             </h2>
           </div>
         </div>
-        </div>
+      </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center space-y-8">
           {/* Subtitle */}
           <p className="font-[Roboto] text-[32px] font-extrabold leading-[37.5px] text-center text-[#004C4C]">
-            Fill out the registration form below and secure your 
+            Fill out the registration form below and secure your
             spot at SustainaSpark .4!
           </p>
 
@@ -97,7 +97,7 @@ const RegistrationSection = () => {
             shadow-lg
             hover:shadow-xl
           "
-          onClick={() => navigate('/register')}
+            onClick={() => navigate('/register')}
           >
             Register Now
           </button>
