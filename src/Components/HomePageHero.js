@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 const HomepageHero = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-[#004C4C] min-h-[600px] py-16">
             <div className="container mx-auto px-0">
@@ -56,6 +58,7 @@ const HomepageHero = () => {
                                     transition: 'background-color 0.3s',
                                 }}
                                 className="hover:bg-yellow-300"
+                                onClick={() => navigate('/register')}
                             >
                                 Apply now
                             </button>

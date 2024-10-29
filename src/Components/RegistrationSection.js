@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CountdownTimer = ({ deadline = "2024-12-31T23:59:59" }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -32,17 +33,17 @@ const CountdownTimer = ({ deadline = "2024-12-31T23:59:59" }) => {
   return (
     <div className="bg-teal-800 text-white p-6 rounded-lg font-mono text-4xl flex justify-center gap-4">
       <div className="text-center">
-        <div className="text-5xl font-bold">{formatNumber(timeLeft.hours)}</div>
+        <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.hours)}</div>
         <div className="text-xs mt-1 uppercase">Hours</div>
       </div>
       <div className="text-5xl font-bold">:</div>
       <div className="text-center">
-        <div className="text-5xl font-bold">{formatNumber(timeLeft.minutes)}</div>
+        <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.minutes)}</div>
         <div className="text-xs mt-1 uppercase">Minutes</div>
       </div>
       <div className="text-5xl font-bold">:</div>
       <div className="text-center">
-        <div className="text-5xl font-bold">{formatNumber(timeLeft.seconds)}</div>
+        <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.seconds)}</div>
         <div className="text-xs mt-1 uppercase">Seconds</div>
       </div>
     </div>
@@ -50,33 +51,23 @@ const CountdownTimer = ({ deadline = "2024-12-31T23:59:59" }) => {
 };
 
 const RegistrationSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-white py-16 relative overflow-hidden">
-      {/* Decorative Leaves */}
-      <div className="absolute right-0 top-0">
-        <svg className="w-24 h-24 text-yellow-400" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M17.75 12.5C17.75 12.5 21 9.25 21 6C21 2.75 17.75 -0.5 17.75 -0.5C14.5 -3.75 11.25 -7 8 -7C4.75 -7 1.5 -3.75 -1.75 -0.5C-1.75 -0.5 -5 2.75 -5 6C-5 9.25 -1.75 12.5 -1.75 12.5C1.5 15.75 4.75 19 8 19C11.25 19 14.5 15.75 17.75 12.5Z" />
-        </svg>
-      </div>
-      <div className="absolute left-0 bottom-0">
-        <svg className="w-24 h-24 text-teal-800" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M17.75 12.5C17.75 12.5 21 9.25 21 6C21 2.75 17.75 -0.5 17.75 -0.5C14.5 -3.75 11.25 -7 8 -7C4.75 -7 1.5 -3.75 -1.75 -0.5C-1.75 -0.5 -5 2.75 -5 6C-5 9.25 -1.75 12.5 -1.75 12.5C1.5 15.75 4.75 19 8 19C11.25 19 14.5 15.75 17.75 12.5Z" />
-        </svg>
-      </div>
-
-      <div className="container mx-auto px-4 max-w-3xl">
-        {/* Main Content */}
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center space-y-8">
           {/* Title */}
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold">
+            <h2 className="font-[Lato] text-[48px] font-bold leading-[57.6px] text-center">
               Ready to ignite your changemaker spark?
             </h2>
-            <div className="w-48 h-1 bg-yellow-400 mx-auto"></div>
           </div>
-
+        </div>
+        </div>
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="text-center space-y-8">
           {/* Subtitle */}
-          <p className="text-teal-800 text-xl">
+          <p className="font-[Roboto] text-[32px] font-extrabold leading-[37.5px] text-center text-[#004C4C]">
             Fill out the registration form below and secure your 
             spot at SustainaSpark .4!
           </p>
@@ -85,7 +76,7 @@ const RegistrationSection = () => {
           <CountdownTimer />
 
           {/* Limited Seats Text */}
-          <p className="text-teal-800 text-lg font-medium">
+          <p className="font-[Roboto] text-[32px] font-extrabold leading-[37.5px] text-center text-[#004C4C]">
             ( Limited Seats Available! Register Now! )
           </p>
 
@@ -105,7 +96,9 @@ const RegistrationSection = () => {
             duration-300
             shadow-lg
             hover:shadow-xl
-          ">
+          "
+          onClick={() => navigate('/register')}
+          >
             Register Now
           </button>
         </div>

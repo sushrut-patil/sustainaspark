@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const TestimonialsSection = () => {
+  const navigate = useNavigate();
   const testimonials = [
     {
       name: "Atharv Sharma",
@@ -10,7 +11,7 @@ const TestimonialsSection = () => {
     {
       name: "Advit Goel",
       text: "This was my first ever participation with them and my first ever fabulous experience. The arrangements were well. Looking forward to more such events with the team of SustainaSpark.",
-      rating: 5
+      rating: 4
     },
     {
       name: "S.ritika",
@@ -72,7 +73,8 @@ const TestimonialsSection = () => {
 
       {/* Register Button */}
       <div className="text-center">
-        <button className="bg-yellow-500 text-teal-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors duration-300">
+        <button className="bg-yellow-500 text-teal-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-400 transition-colors duration-300"
+        onClick={() => navigate('/register')} >
           Register Now
         </button>
       </div>

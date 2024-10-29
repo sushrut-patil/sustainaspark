@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const GainsSection = () => {
+  const navigate = useNavigate();
   const benefits = [
     {
       number: "1",
@@ -18,19 +20,7 @@ const GainsSection = () => {
 
   return (
     <section className="bg-[#004C4C] py-16 relative overflow-hidden">
-      {/* Decorative leaf */}
-      {/* <div className="absolute right-0 bottom-0">
-        <svg 
-          className="w-32 h-32 text-yellow-400 transform rotate-45" 
-          viewBox="0 0 24 24"
-        >
-          <path 
-            fill="currentColor" 
-            d="M17.75 12.5C17.75 12.5 21 9.25 21 6C21 2.75 17.75 -0.5 17.75 -0.5C14.5 -3.75 11.25 -7 8 -7C4.75 -7 1.5 -3.75 -1.75 -0.5C-1.75 -0.5 -5 2.75 -5 6C-5 9.25 -1.75 12.5 -1.75 12.5C1.5 15.75 4.75 19 8 19C11.25 19 14.5 15.75 17.75 12.5Z"
-          />
-        </svg>
-      </div> */}
-
+      
       {/* Header */}
       <div className="bg-yellow-400 p-10">
         <h2 style={{
@@ -103,7 +93,9 @@ const GainsSection = () => {
             transform
             hover:scale-105
             duration-300
-          ">
+          "
+          onClick={() => navigate('/register')}
+          >
             Register Now
           </button>
         </div>
