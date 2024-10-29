@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Header from '../Components/Header2';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RegistrationForm = () => {
@@ -23,6 +24,7 @@ const RegistrationForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
 
   // Form Validation
@@ -168,14 +170,12 @@ const RegistrationForm = () => {
     },
   };
 
-  if (submitted) {
-    return (
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h2>Form submitted successfully!</h2>
-        <p>Your registration has been submitted. Thank you!</p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (submitted) {
+      alert("Form submitted successfully! Your registration has been submitted. Thank you!");
+      navigate('/');
+    }
+  }, [submitted, navigate]);
 
   return (
     <div>
