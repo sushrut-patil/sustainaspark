@@ -65,7 +65,7 @@ const BenefitsSlider = () => {
         <div className="relative max-w-6xl mx-auto">
           {/* Main content */}
           <div className="relative h-[700px] flex items-center justify-center">
-            <div className="text-center w-full max-w-3xl mx-auto px-16">
+            <div className="text-center w-full max-w-3xl mx-auto">
               {/* Globe illustration with people */}
               <div className="relative w-96 h-96 mx-auto">
                 <img

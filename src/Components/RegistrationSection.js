@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const CountdownTimer = ({ deadline = "2024-11-09T23:59:00" }) => {
+const CountdownTimer = ({ deadline = "2024-11-10T00:00:00" }) => {
   const calculateTimeLeft = () => {
+    // Get current time in UTC, then adjust for IST (UTC+5:30)
     const now = new Date().getTime();
     const target = new Date(deadline).getTime();
     const difference = target - now;
-    console.log(difference);
     
     if (difference > 0) {
       return {
-        hours: Math.floor((difference) / (1000 * 60 * 60) ),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / (1000 * 60)) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
     } else {
-      return { hours: 0, minutes: 0, seconds: 0 };
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
   };
 
@@ -34,6 +35,11 @@ const CountdownTimer = ({ deadline = "2024-11-09T23:59:00" }) => {
 
   return (
     <div style={{ background: '#004C4C' }} className="text-white p-6 rounded-lg font-mono text-4xl flex justify-center gap-4">
+      <div className="text-center">
+        <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.days)}</div>
+        <div className="text-xs mt-1 uppercase">Days</div>
+      </div>
+      <div className="text-5xl font-bold">:</div>
       <div className="text-center">
         <div className="text-5xl font-bold tabular-nums bg-black bg-opacity-30 px-4 py-2 rounded">{formatNumber(timeLeft.hours)}</div>
         <div className="text-xs mt-1 uppercase">Hours</div>
