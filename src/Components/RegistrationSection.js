@@ -7,6 +7,7 @@ const CountdownTimer = ({ deadline = "2024-11-09T23:59:00" }) => {
     const target = new Date(deadline).getTime();
     const difference = target - now;
     console.log(difference);
+    
     if (difference > 0) {
       return {
         hours: Math.floor((difference) / (1000 * 60 * 60) ),
