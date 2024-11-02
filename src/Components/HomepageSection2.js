@@ -22,11 +22,12 @@ const EventFlow = () => {
     setCurrentSlide((prev) => (prev - 1 < 0 ? slides.length - 1 : prev - 1));
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const id = setInterval(nextSlide, 1000);
     setIntervalId(id);
     return () => clearInterval(id);
-  }, []);
+  },);
 
   const getVisibleSlides = () => {
     const visibleSlides = [];
