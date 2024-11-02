@@ -32,7 +32,7 @@ const BenefitsSlider = () => {
     },
     {
       title: "Become a Vongster",
-      description: "VIP Access: Get priority registration for future VONG events and workshops.Mentorship Opportunities: Learn from experienced sustainability leaders and gain invaluable guidance",
+      description: "VIP Access: Get priority registration for future VONG events and workshops. Mentorship Opportunities: Learn from experienced sustainability leaders and gain invaluable guidance",
       image: "/images/whyImages/vong.png",
     }
   ];
@@ -52,7 +52,7 @@ const BenefitsSlider = () => {
   return (
     <section className="bg-[#004C4C]">
       {/* Header */}
-      <div style={{ backgroundColor: '#FFC12D' }} className="py-8 mb-12 w-full text-center">
+      <div style={{ backgroundColor: '#FFC12D' }} className="py-8 w-full text-center">
         <h2 className="text-4xl font-extrabold mb-2 text-black-800 lg:text-[48px] lg:leading-[57.6px]">
           Why Join SustainaSpark 4?
         </h2>
@@ -64,10 +64,10 @@ const BenefitsSlider = () => {
         {/* Slider */}
         <div className="relative max-w-6xl mx-auto">
           {/* Main content */}
-          <div className="relative h-[700px] flex items-center justify-center">
+          <div className="relative h-[550px] flex items-center justify-center">
             <div className="text-center w-full max-w-3xl mx-auto">
               {/* Globe illustration with people */}
-              <div className="relative w-96 h-96 mx-auto">
+              <div className="relative w-90 h-96 mx-auto">
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
@@ -76,7 +76,7 @@ const BenefitsSlider = () => {
               </div>
               
               {/* Text content container with fixed height */}
-              <div className="h-[200px] flex flex-col justify-start">
+              <div className="flex flex-col justify-start">
                 <h3 className="text-yellow-400"
                     style={{
                       fontFamily: 'Lato',
@@ -103,21 +103,21 @@ const BenefitsSlider = () => {
             {/* Navigation buttons - positioned relative to the fixed height container */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-3 hover:bg-yellow-300 transition-colors"
             >
               <ChevronLeft size={24} className="text-black" />
             </button>
             
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full p-3 hover:bg-yellow-300 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-3 hover:bg-yellow-300 transition-colors"
             >
               <ChevronRight size={24} className="text-black" />
             </button>
           </div>
 
           {/* Navigation dots */}
-          <div className="flex justify-center gap-2 pb-8">
+          <div className="flex justify-center gap-2 pb-2">
             {slides.map((_, index) => (
               <button
                 key={index}
