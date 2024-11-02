@@ -51,23 +51,24 @@ const BenefitsSlider = () => {
 
   return (
     <section className="bg-[#004C4C]">
-      {/* Header */}
-      <div style={{ backgroundColor: '#FFC12D' }} className="py-8 w-full text-center">
-        <h2 className="text-4xl font-extrabold mb-2 text-black-800 lg:text-[48px] lg:leading-[57.6px]">
+      {/* Header - Made responsive */}
+      <div className="bg-[#FFC12D] py-4 md:py-8 w-full text-center">
+        <h2 className="text-2xl md:text-4xl font-extrabold mb-2 text-black-800 lg:text-[48px] lg:leading-[57.6px] px-4">
           Why Join SustainaSpark 4?
         </h2>
-        <p className="text-teal-800 text-xl font-semibold lg:text-[32px] lg:leading-[38.4px]">
+        <p className="text-lg md:text-xl text-teal-800 font-semibold lg:text-[32px] lg:leading-[38.4px] px-4">
           Develop Skills for Your Future
         </p>
       </div>
-      <div className="container mx-auto px-4">
+      
+      <div className="container mx-auto px-2 md:px-4">
         {/* Slider */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Main content */}
-          <div className="relative h-[550px] flex items-center justify-center">
-            <div className="text-center w-full max-w-3xl mx-auto">
-              {/* Globe illustration with people */}
-              <div className="relative w-90 h-96 mx-auto">
+          {/* Main content - Adjusted height for mobile */}
+          <div className="relative h-[400px] md:h-[550px] flex items-center justify-center">
+            <div className="text-center w-full max-w-3xl mx-auto px-8 md:px-0">
+              {/* Image container - Responsive height */}
+              <div className="relative w-full h-48 md:h-96 mx-auto">
                 <img
                   src={slides[currentSlide].image}
                   alt={slides[currentSlide].title}
@@ -75,24 +76,20 @@ const BenefitsSlider = () => {
                 />
               </div>
               
-              {/* Text content container with fixed height */}
-              <div className="flex flex-col justify-start">
-                <h3 className="text-yellow-400"
+              {/* Text content - Responsive text sizes */}
+              <div className="flex flex-col justify-start mt-4 md:mt-0">
+                <h3 className="text-yellow-400 text-2xl md:text-3xl lg:text-4xl font-bold md:font-extrabold"
                     style={{
                       fontFamily: 'Lato',
-                      fontSize: '36px',
-                      fontWeight: 800,
-                      lineHeight: '43.2px',
+                      lineHeight: '1.2',
                       textAlign: 'center'
                     }}>
                   {slides[currentSlide].title}
                 </h3>
-                <p className="text-white mt-4 overflow-y-auto"
+                <p className="text-white mt-2 md:mt-4 text-base md:text-xl lg:text-2xl font-semibold md:font-bold"
                    style={{
                      fontFamily: 'Lato',
-                     fontSize: '24px',
-                     fontWeight: 800,
-                     lineHeight: '28.8px',
+                     lineHeight: '1.3',
                      textAlign: 'center'
                    }}>
                   {slides[currentSlide].description}
@@ -100,31 +97,31 @@ const BenefitsSlider = () => {
               </div>
             </div>
 
-            {/* Navigation buttons - positioned relative to the fixed height container */}
+            {/* Navigation buttons - Adjusted positioning and size for mobile */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-3 hover:bg-yellow-300 transition-colors"
+              className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-2 md:p-3 hover:bg-yellow-300 transition-colors"
             >
-              <ChevronLeft size={24} className="text-black" />
+              <ChevronLeft size={20} className="text-black md:w-6 md:h-6" />
             </button>
             
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-3 hover:bg-yellow-300 transition-colors"
+              className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 bg-yellow-400 rounded-full mt-[-50px] p-2 md:p-3 hover:bg-yellow-300 transition-colors"
             >
-              <ChevronRight size={24} className="text-black" />
+              <ChevronRight size={20} className="text-black md:w-6 md:h-6" />
             </button>
           </div>
 
-          {/* Navigation dots */}
-          <div className="flex justify-center gap-2 pb-2">
+          {/* Navigation dots - Adjusted spacing for mobile */}
+          <div className="flex justify-center gap-1 md:gap-2 pb-4">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 md:w-3 h-2 md:h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index 
-                    ? 'bg-yellow-400 w-6' 
+                    ? 'bg-yellow-400 w-4 md:w-6' 
                     : 'bg-yellow-400/50 hover:bg-yellow-400/75'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
