@@ -6,11 +6,12 @@ import RegistrationSection from '../Components/RegistrationSection';
 import GainsSection from '../Components/GainsSection';
 import TestimonialsSection from '../Components/TestimonialsSection';
 import Footer from '../Components/Footer';
-
+import { Analytics } from "@vercel/analytics/react"
 
 function HomePage() {
   return (
     <div className="min-h-screen">
+      <Analytics/>
       <Header />
       <HomepageHero />
       <HomepageSection2/>
