@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const EventFlow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [intervalId, setIntervalId] = useState(null);
   const slides = [
     '/images/eventImages/welcome.png',
     '/images/eventImages/policy.png',
@@ -18,26 +18,51 @@ const EventFlow = () => {
     setCurrentSlide((prev) => (prev + 1 >= slides.length ? 0 : prev + 1));
   };
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 < 0 ? slides.length - 1 : prev - 1));
+  };
+
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
+    const id = setInterval(nextSlide, 1000);
+    setIntervalId(id);
+    return () => clearInterval(id);
   }, []);
 
+  const getVisibleSlides = () => {
+    const visibleSlides = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentSlide + i) % slides.length;
+      visibleSlides.push({ slide: slides[index], index });
+    }
+    return visibleSlides;
+  };
+  const handleMouseEnter = () => {
+    if (intervalId) clearInterval(intervalId);
+  };
+
+  const handleMouseLeave = () => {
+    const id = setInterval(nextSlide, 1000);
+    setIntervalId(id);
+  };
+
   return (
-    <div className="relative">
+    <div className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="flex justify-between items-center gap-4">
         <button
-          onClick={nextSlide}
+          onClick={prevSlide}
           className="p-2 rounded-full bg-teal-800 text-white hover:bg-teal-700"
         >
           <ChevronLeft size={24} />
         </button>
 
         <div className="flex gap-4 overflow-hidden">
-          {slides.slice(currentSlide, currentSlide + 1).map((slide, index) => (
+          {getVisibleSlides().map(({ slide, index }) => (
             <div
               key={index}
-              className="flex-1 bg-teal-800 rounded-lg p-6 text-center min-w-[800px] h-[500px]"
+              className="flex-1 bg-teal-800 rounded-lg p-4 text-center min-w-[250px] h-[300px] transition-all duration-500 ease-in-out"
             >
               <img src={slide} alt={`Slide ${index}`} className="w-full h-full object-contain" />
             </div>
@@ -58,8 +83,8 @@ const EventFlow = () => {
 const HomepageSection2 = () => {
   const navigate = useNavigate();
   return (
-    <div style={{ backgroundColor: '#004C4C' }} className='p-0'>
-      <div className="bg-white py-16 rounded-t-3xl">
+    <div style={{ backgroundColor: '#004C4C' }} className="p-0">
+      <div className="bg-white py-8 rounded-t-3xl">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <img
@@ -76,33 +101,36 @@ const HomepageSection2 = () => {
             />
           </div>
         </div>
-        <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-[3fr,4fr] items-center mb-12">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-[40fr,60fr] gap-8">
             {/* Left side - Event Highlights */}
-            <div className="md:basis-[40%]">
-              <div className="inline-block border-solid border-[#FFC12D] rounded-md px-6 py-2 mb-6">
-                <span className="text-[48px] font-[800] font-['Roboto'] leading-[56.25px] text-center">
-                  Event Highlights
-                </span>
+            <div className="flex flex-col items-center">
+              <div className="w-full text-center mb-6">
+                <div className="inline-block border-solid border-[#FFC12D] rounded-md px-6 py-2 whitespace-nowrap">
+                  <span className="text-[48px] font-[800] font-['Roboto'] leading-[56.25px]">
+                    Event Highlights
+                  </span>
+                </div>
               </div>
 
-              <div className="relative">
+              <div className="relative w-full flex justify-center">
                 <img
                   src="/images/eventperson.png"
                   alt="Event highlights illustration"
-                  className="rounded-full w-full max-w-md"
+                  className="rounded-full w-4/5"
                 />
               </div>
 
-              <button className="mt-8 bg-yellow-400 text-teal-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition-colors"
-                onClick={() => navigate('/register')} >
+              <button
+                className="mt-8 bg-yellow-400 text-teal-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition-colors"
+                onClick={() => navigate('/register')}
+              >
                 Register Now
               </button>
             </div>
 
             {/* Right side - Theme and Event Flow */}
-            <div className="space-y-8 md:basis-[60%]">
-            <div className="h-[50px]"></div>
+            <div className="space-y-8">
               <div className="border-l-[10px] border-[#FFC12D] bg-white pl-[50px]">
                 <h2 className="font-roboto text-[36px] font-medium leading-[42.19px] text-left text-black">Theme</h2>
                 <p className="font-roboto text-[36px] font-medium leading-[42.19px] text-left text-[#004C4C]">Discussions and Policy Making</p>
