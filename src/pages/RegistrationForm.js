@@ -70,7 +70,7 @@ const RegistrationForm = () => {
     if (validateForm()) {
       try {
         // await axios.post('http://localhost:5000/api/submit-data', formData);
-        await axios.post('https://api.sheetbest.com/sheets/a03eb7b9-5f94-4b6d-a1d3-45789514ee00', formData);
+        await axios.post(process.env.REACT_APP_GOOGLE_SHEET_API, formData);
         setSubmitted(true);
       } catch (error) {
         console.error("Error submitting data:", error);
