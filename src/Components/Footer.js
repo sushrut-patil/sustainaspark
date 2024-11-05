@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4">
             <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
               <Clock size={20} />
-              <span className="whitespace-nowrap">10 November 2024</span>
+              <span className="whitespace-nowrap">17 November 2024</span>
             </div>
             <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
               <Clock size={20} />

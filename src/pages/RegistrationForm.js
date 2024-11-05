@@ -69,6 +69,7 @@ const RegistrationForm = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
+        // await axios.post('http://localhost:5000/api/submit-data', formData);
         await axios.post('https://api.sheetbest.com/sheets/a03eb7b9-5f94-4b6d-a1d3-45789514ee00', formData);
         setSubmitted(true);
       } catch (error) {
@@ -115,7 +116,7 @@ const RegistrationForm = () => {
             },
             {
               title: '3. Payment Terms:',
-              description: 'Complete payment by 9 November 2024; registration is confirmed upon successful payment.'
+              description: 'Complete payment by 15 November 2024; registration is confirmed upon successful payment.'
             },
             {
               title: '4. Event Registration:',
