@@ -22,7 +22,7 @@ const GainsSection = () => {
     <section className="bg-[#004C4C] py-10 md:py-16 relative overflow-hidden">
       
       {/* Header */}
-      <div className="bg-yellow-400 p-6 md:p-10">
+      <div className="bg-[#FFC12D] p-6 md:p-10">
         <h2 
           style={{
             fontFamily: 'Lato',
