@@ -1,27 +1,23 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
-    const navigate = useNavigate();
+const Header = ({registrationRef}) => {
+    const handleRegisterClick = () => {
+        console.log("hit");
+        registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
     return (
-        <header className="bg-white shadow-md p-4">
-            <div className="container mx-auto flex justify-between items-center">
+        <header className="w-full flex justify-center p-4">
+            <div className="w-1/2 h-16 bg-white shadow-md rounded-full flex justify-between items-center px-6 py-2">
                 <div className="flex items-center">
                     <img
                         src="/images/logo.png"
                         alt="SustainaSpark Logo"
-                        className="h-14"
+                        className="h-12"
                     />
                 </div>
                 <button 
-                    className="text-white px-8 py-2 rounded-full transition-colors"
-                    style={{ 
-                        backgroundColor: '#004C4C',
-                        ':hover': {
-                            backgroundColor: '#003939'
-                        }
-                    }}
-                    onClick={() => navigate('/register')}
+                    className="bg-[#FFC12D] w-40 h-10 text-black font-bold px-6 py-1.5 rounded-full hover:bg-[#003939] transition-colors"
+                    onClick={handleRegisterClick}
                 >
                     Register
                 </button>
