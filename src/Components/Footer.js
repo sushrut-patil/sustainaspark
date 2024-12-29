@@ -1,11 +1,11 @@
 import React from 'react';
-import { Mail, Clock, MapPin } from 'lucide-react';
+import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
     <div style={{ background: '#004C4C' }} className="text-white py-8 px-4 md:px-6 relative">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        
+
         {/* Left Section - About */}
         <div className="max-w-xl">
           <h3 style={{
@@ -26,20 +26,23 @@ const Footer = () => {
             lineHeight: '26px',
             textAlign: 'left'
           }} className="text-white mb-6">
-            The SustainaSpark is an initiative by VONG to empower young minds to take action on crucial environmental issues. Through engaging events and workshops, participants learn how to make sustainability a norm in their communities.
+            Step into the role of a policymaker in this exciting one-day online event! Tackle the challenge of reducing single-use plastics in local contexts by debating, collaborating, and crafting impactful solutions.
+          </p>
+          <p
+            style={{
+              fontFamily: 'Inter',
+              fontSize: '24px',
+              fontWeight: 400,
+              lineHeight: '29px',
+              fontStyle: 'normal',
+              textAlign: 'left',
+            }}
+            className="text-white mb-6"
+          >
+            Your ideas can shape the future —{' '}
+            <span style={{ color: '#FFC12D' }}>let’s spark</span> change together!
           </p>
 
-          {/* Event Details */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4">
-            <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
-              <Clock size={20} />
-              <span className="whitespace-nowrap">17 November 2024</span>
-            </div>
-            <div style={{ background: '#FFC12D' }} className="flex items-center gap-2 text-teal-900 p-2 rounded-md">
-              <Clock size={20} />
-              <span className="whitespace-nowrap">10:30AM - 4:45 PM</span>
-            </div>
-          </div>
         </div>
 
         {/* Right Section - Contact */}
@@ -67,7 +70,6 @@ const Footer = () => {
           {/* Contact Details */}
           <div className="space-y-4">
             <div className="flex items-center justify-start md:justify-end gap-2">
-              <MapPin size={20} className="text-yellow-500" />
               <span style={{
                 fontFamily: 'Inter',
                 fontSize: '16px',
@@ -76,11 +78,11 @@ const Footer = () => {
               }} className="text-white">
                 G-9, Hemkunt Tower, 98 Nehru Place, New Delhi, 110019
               </span>
+              <MapPin size={20} className="text-yellow-500" />
             </div>
             <div className="flex items-center justify-start md:justify-end gap-2">
-              <Mail size={20} className="text-yellow-500" />
-              <a 
-                href="mailto:events@vong.earth" 
+              <a
+                href="mailto:events@vong.earth"
                 style={{
                   fontFamily: 'Inter',
                   fontSize: '16px',
@@ -91,6 +93,11 @@ const Footer = () => {
               >
                 events@vong.earth
               </a>
+              <Mail size={20} className="text-yellow-500" />
+            </div>
+            <div className="flex items-center justify-start md:justify-end gap-2">
+              +91-xxxxx-xxxxx
+              <Phone size={20} className="text-yellow-500" />
             </div>
           </div>
         </div>
