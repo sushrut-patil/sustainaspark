@@ -12,7 +12,7 @@ const HomepageHero = ({ registrationRef }) => {
                         rgba(0, 76, 76, 0.15), 
                         rgba(0, 76, 76, 0.15)
                     ),
-                    url('/images/newss4/homepageimg.jpeg')
+                    url('/images/homepageimg.jpeg')
                 `,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
