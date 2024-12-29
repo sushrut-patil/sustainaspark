@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import SustainaSparkForm from './SustainaSparkForm';
-
+import SustainaSpark from './SustainaSpark';
 
 const RegistrationSection = () => {
   return (
-    <section className="bg-white py-10 md:py-16 relative overflow-hidden">
+    <section className="bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center space-y-4 md:space-y-8">
           <div className="space-y-2">
@@ -20,10 +20,11 @@ const RegistrationSection = () => {
             Fill out the registration form below and secure your
             spot at SustainaSpark .4!
           </p>
-        <div>
-          <SustainaSparkForm/>
         </div>
-        </div>
+      </div>
+      <SustainaSpark/>
+      <div className='bg-[#FFC12D]'>
+        <SustainaSparkForm />
       </div>
     </section>
   );
