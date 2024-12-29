@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header2';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RegistrationForm = () => {
@@ -24,7 +23,6 @@ const RegistrationForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
 
   // Form Validation
@@ -90,9 +88,8 @@ const RegistrationForm = () => {
   useEffect(() => {
     if (submitted) {
       alert("Form submitted successfully! Your registration has been submitted. Thank you!");
-      navigate('/');
     }
-  }, [submitted, navigate]);
+  }, [submitted]);
 
   return (
     <div className="min-h-screen flex flex-col">

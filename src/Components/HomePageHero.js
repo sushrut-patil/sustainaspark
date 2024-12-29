@@ -1,8 +1,7 @@
-import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
 const HomepageHero = ({ registrationRef }) => {
-    const navigate = useNavigate();
+
     
     return (
         <div 

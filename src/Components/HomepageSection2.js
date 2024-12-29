@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const EventFlow = () => {
@@ -85,7 +84,6 @@ const EventFlow = () => {
 };
 
 const HomepageSection2 = () => {
-  const navigate = useNavigate();
   return (
     <div style={{ backgroundColor: '#004C4C' }} className="p-0">
       <div className="bg-white py-4 md:py-8 rounded-t-3xl">
@@ -128,7 +126,6 @@ const HomepageSection2 = () => {
 
               <button
                 className="mt-6 md:mt-8 bg-yellow-400 text-teal-900 px-6 md:px-8 py-2 md:py-3 rounded-full font-bold hover:bg-yellow-300 transition-colors text-sm md:text-base"
-                onClick={() => navigate('/register')}
               >
                 Register Now
               </button>

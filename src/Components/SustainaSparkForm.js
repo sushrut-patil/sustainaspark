@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SustainaSparkForm = () => {
@@ -13,7 +12,6 @@ const SustainaSparkForm = () => {
     });
 
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
     const [submitted, setSubmitted] = useState(false);
 
     const validateForm = () => {

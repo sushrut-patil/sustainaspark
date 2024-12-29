@@ -1,8 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const GainsSection = () => {
-  const navigate = useNavigate();
   const benefits = [
     {
       number: "1",
@@ -100,7 +98,6 @@ const GainsSection = () => {
               duration-300
               w-full md:w-auto
             "
-            onClick={() => navigate('/register')}
           >
             Register Now
           </button>

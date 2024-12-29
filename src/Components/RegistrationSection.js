@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import SustainaSparkForm from './SustainaSparkForm';
 
 
 const RegistrationSection = () => {
-  const navigate = useNavigate();
   return (
     <section className="bg-white py-10 md:py-16 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-5xl">

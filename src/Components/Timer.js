@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const CountdownTimer = ({ deadline = "2024-11-15T00:00:00" }) => {
   const calculateTimeLeft = () => {
@@ -56,7 +55,6 @@ const CountdownTimer = ({ deadline = "2024-11-15T00:00:00" }) => {
 };
 
 const RegistrationSection = () => {
-  const navigate = useNavigate();
   return (
     <section className="bg-white py-10 md:py-16 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -98,7 +96,6 @@ const RegistrationSection = () => {
             hover:shadow-xl
             w-full md:w-auto
           "
-            onClick={() => navigate('/register')}
           >
             Register Now
           </button>
