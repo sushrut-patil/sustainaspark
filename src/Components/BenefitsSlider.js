@@ -1,38 +1,34 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const BenefitsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      title: "Global Awareness",
-      description: "Explore critical international sustainability issues.",
-      image: "images/Benefit1.png",
+      title: "Turn Ideas into Action",
+      description: "Transform your sustainability ideas into real-world policies for a greener tomorrow.",
+      image: "/images/benefit1.png",
     },
     {
-      title: "Debate Skills",
-      description: "Sharpen public speaking and argumentation abilities.",
-      image: "images/Benefit2.png",
+      title: "Network with Changemakers",
+      description: "Connect with mentors, advocates, and peers who share your passion for sustainability.",
+      image: "/images/benefit2.png",
     },
     {
-      title: "Critical Thinking",
-      description: "Hone your problem-solving and analytical skills..",
-      image: "images/Benefit3.png",
+      title: "Earn Recognition",
+      description: "Win prestigious titles, certificates, and prizes to showcase your achievements.",
+      image: "/images/benefit3.png",
     },
     {
-      title: "Be Recognized",
-      description: "Showcase your talent and dedication! Earn certificates and recognition for your contributions to a sustainable future.",
-      image: "images/Benefit4.png",
+      title: "Learn from the Best",
+      description: "Leverage AI tools and engaging methods to elevate your ideas to the next level.",
+      image: "/images/benefit4.png",
     },
   ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   const goToSlide = (index) => {
@@ -43,33 +39,16 @@ const BenefitsSlider = () => {
     <section className="bg-[#004C4C] relative overflow-hidden">
       {/* Header */}
       <div className="bg-[#FFC12D] py-8 w-full text-center relative">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
+        <h2 className="text-5xl font-extrabold text-[#1E1E1E] mb-2">
           What's in it for YOU?
         </h2>
-        {/* Decorative Leaves */}
-        <div className="absolute left-4 top-4">
-          <div className="w-8 h-8 bg-[#006666] rounded-full transform -rotate-45" />
-        </div>
-        <div className="absolute right-4 bottom-4">
-          <div className="w-6 h-6 bg-[#006666] rounded-full transform rotate-45" />
-        </div>
       </div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-[1200px] mx-auto relative">
-          {/* Title with left border */}
-          <div className="mb-6 pl-4 border-l-4 border-[#FFC12D]">
-            <h3 
-              className="w-[316px] h-[38px] font-lato font-extrabold text-[32px] leading-[38px] text-white"
-              style={{ fontFamily: 'Lato' }}
-            >
-              {slides[currentSlide].title}
-            </h3>
-          </div>
-
-          {/* Image Container - 50% width */}
-          <div className="relative w-1/2 mx-auto">
+          {/* Image Container - 80% width centered */}
+          <div className="relative w-[90%] mx-auto mb-8">
             <div className="rounded-xl overflow-hidden">
               <img
                 src={slides[currentSlide].image}
@@ -77,35 +56,47 @@ const BenefitsSlider = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Next Button */}
-            <button
-              onClick={nextSlide}
-              className="absolute right-[-60px] top-1/2 -translate-y-1/2 bg-[#FFC12D] rounded-full p-4 hover:bg-[#FFD15D] transition-colors"
-              aria-label="Next slide"
-            >
-              <ChevronRight size={24} className="text-black" />
-            </button>
           </div>
 
-          {/* Description - positioned below image */}
-          <p 
-            className="mt-6 font-lato font-medium text-[20px] leading-[24px] text-white max-w-[758px]"
-            style={{ fontFamily: 'Lato' }}
-          >
-            {slides[currentSlide].description}
-          </p>
+          <div className="relative w-[90%] mx-auto mb-8">
+            {/* Title and Description Container */}
+            <div className="pl-4">
+              <h3
+                className="font-lato font-extrabold text-[32px] text-white mb-4 border-l-[6px] border-[#FFC12D] px-8 py-2"
+                style={{ fontFamily: 'Lato' }}
+              >
+                {slides[currentSlide].title}
+              </h3>
+              <p
+                className="font-lato font-medium text-[20px] text-white"
+                style={{ fontFamily: 'Lato' }}
+              >
+                {slides[currentSlide].description}
+              </p>
+            </div>
+
+            {/* Next Button - Positioned to the right */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#004C4C] rounded-full p-4 hover:bg-[#005C5C] transition-colors border-4 border-[#FFC12D]"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={26} className="text-[#FFFFFF]" />
+            </button>
+          </div>
 
           {/* Progress Dots */}
           <div className="flex justify-center gap-2 mt-8">
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
-                    ? 'w-8 bg-[#FFC12D]' 
+                className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index
+                    ? 'w-8 bg-[#FFC12D]'
                     : 'w-2 bg-[#FFC12D]/40'
-                }`}
+                  }`}
+                onClick={() => goToSlide(index)}
+                role="button"
+                tabIndex={0}
               />
             ))}
           </div>
