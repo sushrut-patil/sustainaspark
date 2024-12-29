@@ -8,33 +8,23 @@ const BenefitsSlider = () => {
     {
       title: "Global Awareness",
       description: "Explore critical international sustainability issues.",
-      image: "images/whyImages/global.png",
+      image: "images/Benefit1.png",
     },
     {
       title: "Debate Skills",
       description: "Sharpen public speaking and argumentation abilities.",
-      image: "images/whyImages/debate.png",
+      image: "images/Benefit2.png",
     },
     {
       title: "Critical Thinking",
       description: "Hone your problem-solving and analytical skills..",
-      image: "images/whyImages/critical.png",
+      image: "images/Benefit3.png",
     },
     {
       title: "Be Recognized",
       description: "Showcase your talent and dedication! Earn certificates and recognition for your contributions to a sustainable future.",
-      image: "images/whyImages/recognized.png",
+      image: "images/Benefit4.png",
     },
-    {
-      title: "Real-World Impact",
-      description: "Apply your knowledge to address global challenges.",
-      image: "images/whyImages/impact.png",
-    },
-    {
-      title: "Become a Vongster",
-      description: "VIP Access: Get priority registration for future VONG events and workshops. Mentorship Opportunities: Learn from experienced sustainability leaders and gain invaluable guidance",
-      image: "/images/whyImages/vong.png",
-    }
   ];
 
   const nextSlide = () => {
