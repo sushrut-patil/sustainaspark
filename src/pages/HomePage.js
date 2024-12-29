@@ -1,24 +1,26 @@
 import BenefitsSlider from '../Components/BenefitsSlider';
 import HomepageHero from "../Components/HomePageHero";
-import HomepageSection2 from '../Components/HomepageSection2';
+import EventSnapshot from "../Components/EventSnapshot";
 import RegistrationSection from '../Components/RegistrationSection';
-import GainsSection from '../Components/GainsSection';
 import TestimonialsSection from '../Components/TestimonialsSection';
 import Footer from '../Components/Footer';
 import { useRef } from 'react';
+import AboutVong from '../Components/AboutVong';
+import AboutSS4 from '../Components/AboutSS4';
 
 function HomePage() {
   const registrationRef = useRef(null);
   return (
     <div className="min-h-screen">
       <HomepageHero registrationRef={registrationRef} />
-      <HomepageSection2/>
+      <AboutVong/>
+      <AboutSS4/>
       <BenefitsSlider/>
-      <GainsSection/>
+      <EventSnapshot/>
+      <TestimonialsSection/>
       <div ref={registrationRef}> 
       <RegistrationSection  />
       </div>
-      <TestimonialsSection/>
       <Footer/>
     </div>
   );
