@@ -2,7 +2,10 @@ import React from 'react';
 
 const AboutVong = () => {
   return (
-    <div className="relative flex flex-col items-center p-8 max-w-7xl mx-auto">
+    <div className="relative flex flex-col items-center p-8 pt-4 max-w-7xl mx-auto">
+      <h1 className='mb-8 font-lato font-extrabold text-[32px]'>
+        Time Left to Register <span className='text-[#FFB400]'>!</span>
+      </h1>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Image Section */}
         <div className="relative">
