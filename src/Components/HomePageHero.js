@@ -1,17 +1,19 @@
 import Header from './Header';
 import { useEffect, useState } from 'react';
+import CountdownTimer from './Timer';
 
 const HomepageHero = ({ registrationRef }) => {
     return (
+        <div className='mb-16'>
         <div 
-            className="relative w-screen h-screen overflow-hidden px-4 py-8"
+            className="z-0 relative w-screen h-screen overflow-hidden px-4 py-8"
             style={{
                 backgroundImage: `
                     linear-gradient(
                         rgba(0, 76, 76, 0.15), 
                         rgba(0, 76, 76, 0.15)
                     ),
-                    url('/images/heropage.png')
+                    url('./images/heropage.png')
                 `,
                 backgroundSize: '100% 100%',  // Changed to ensure full width and height coverage
                 backgroundPosition: 'center',
@@ -39,6 +41,10 @@ const HomepageHero = ({ registrationRef }) => {
                     </button>
 
                 </div>
+            </div>
+        </div>
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
+                <CountdownTimer />
             </div>
         </div>
     );
