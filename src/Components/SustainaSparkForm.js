@@ -75,7 +75,7 @@ const SustainaSparkForm = () => {
     }, [submitted]);
 
     return (
-        <div className="z-0 w-[50%] min-w-[30%] mx-auto pb-24 ">
+        <div className="z-10 w-[50%] min-w-[30%] mx-auto pb-24 ">
             <div className="rounded-3xl text-white border shadow-2xl drop-shadow-[0px_0px_9.9px_rgba(66,66,66,0.51)]">
                 <div className=' rounded-bl-3xl rounded-br-3xl bg-[#004C4C] py-2 pb-6 px-4'>
                     <form onSubmit={handleSubmit} className="space-y-6">

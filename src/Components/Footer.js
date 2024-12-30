@@ -3,7 +3,7 @@ import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div style={{ background: '#004C4C' }} className="text-white py-8 px-4 md:px-6 relative">
+    <div style={{ background: '#004C4C' }} className="z-0 text-white py-8 px-4 md:px-6 relative">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Left Section - About */}
