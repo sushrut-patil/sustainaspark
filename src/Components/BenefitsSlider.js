@@ -38,62 +38,63 @@ const BenefitsSlider = () => {
   return (
     <section className="bg-[#004C4C] relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#FFC12D] py-8 w-full text-center relative">
-        <h2 className="text-5xl font-extrabold text-[#1E1E1E] mb-2">
+      <div className="bg-[#FFC12D] py-4 md:py-8 w-full text-center relative">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1E1E1E] mb-2 px-4">
           What's in it for YOU?
         </h2>
       </div>
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-6 md:py-12">
         <div className="max-w-[1200px] mx-auto relative">
-          {/* Image Container - 80% width centered */}
-          <div className="relative w-[90%] mx-auto mb-8">
+          {/* Image Container */}
+          <div className="relative w-full md:w-[90%] mx-auto mb-4 md:mb-8">
             <div className="rounded-xl overflow-hidden">
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].title}
-                className="w-full h-full object-cover"
+                className="w-full h-48 md:h-full object-cover"
               />
             </div>
           </div>
 
-          <div className="relative w-[90%] mx-auto mb-8">
+          <div className="relative w-full md:w-[90%] mx-auto mb-6 md:mb-8">
             {/* Title and Description Container */}
-            <div className="pl-4">
+            <div className="pl-2 md:pl-4">
               <h3
-                className="font-lato font-extrabold text-[32px] text-white mb-4 border-l-[6px] border-[#FFC12D] px-8 py-2"
+                className="font-lato font-extrabold text-2xl md:text-[32px] text-white mb-2 md:mb-4 border-l-[6px] border-[#FFC12D] px-4 md:px-8 py-2"
                 style={{ fontFamily: 'Lato' }}
               >
                 {slides[currentSlide].title}
               </h3>
               <p
-                className="font-lato font-medium text-[20px] text-white"
+                className="font-lato font-medium text-base md:text-[20px] text-white px-4 md:px-0"
                 style={{ fontFamily: 'Lato' }}
               >
                 {slides[currentSlide].description}
               </p>
             </div>
 
-            {/* Next Button - Positioned to the right */}
+            {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#004C4C] rounded-full p-4 hover:bg-[#005C5C] transition-colors border-4 border-[#FFC12D]"
+              className="absolute -right-2 md:right-0 top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D]"
               aria-label="Next slide"
             >
-              <ChevronRight size={26} className="text-[#FFFFFF]" />
+              <ChevronRight size={20} className="text-[#FFFFFF] md:w-6 md:h-6" />
             </button>
           </div>
 
           {/* Progress Dots */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-4 md:mt-8">
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index
-                    ? 'w-8 bg-[#FFC12D]'
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentSlide === index
+                    ? 'w-6 md:w-8 bg-[#FFC12D]'
                     : 'w-2 bg-[#FFC12D]/40'
-                  }`}
+                }`}
                 onClick={() => goToSlide(index)}
                 role="button"
                 tabIndex={0}

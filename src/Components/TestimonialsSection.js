@@ -17,28 +17,28 @@ const TestimonialsSection = () => {
   return (
     <div className="relative w-full">
       {/* Header Section */}
-      <div className="w-full bg-[#FFC12D] py-8 px-4 flex flex-col items-center">
-        <h2 className="text-[48px] leading-[58px] font-extrabold font-lato text-[#1E1E1E] mb-2">
+      <div className="w-full bg-[#FFC12D] py-6 md:py-8 px-4 flex flex-col items-center text-center">
+        <h2 className="text-3xl md:text-[48px] leading-tight md:leading-[58px] font-extrabold font-lato text-[#1E1E1E] mb-2">
           What Others Say
         </h2>
-        <p className="text-[24px] font-extrabold font-lato text-[#004C4C]">
+        <p className="text-xl md:text-[24px] font-extrabold font-lato text-[#004C4C]">
           Real stories. Real impact.
         </p>
       </div>
 
       {/* Testimonials Section */}
-      <div className="container mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="container mx-auto px-4 md:px-8 py-10 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="relative w-[460px] h-[400px] bg-[#004C4C] p-10 rounded-lg">
+          <div key={index} className="relative w-full md:w-[460px] h-auto md:h-[400px] bg-[#004C4C] p-6 md:p-10 rounded-lg mx-auto">
             {/* White box with quote SVG */}
-            <div className="absolute -right-4 -top-4 w-[148px] h-[160px] bg-white p-4 rounded-lg shadow-lg flex justify-center items-center">
+            <div className="absolute -right-2 md:-right-4 -top-2 md:-top-4 w-[100px] md:w-[148px] h-[120px] md:h-[160px] bg-white p-4 rounded-lg shadow-lg flex justify-center items-center">
               <svg
-                width="128"
-                height="128"
+                width="80"
+                height="80"
                 viewBox="0 0 32 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="transform -translate-x-[10px] -translate-y-[-5px]"
+                className="transform scale-75 md:scale-100 -translate-x-[10px] -translate-y-[-5px]"
               >
                 <path
                   d="M12 15H6.8C6.8 8.2 12 7 12 7V3C12 3 4 4.2 4 15V25C4 27.2 5.8 29 8 29H12C14.2 29 16 27.2 16 25V19C16 16.8 14.2 15 12 15Z"
@@ -51,20 +51,19 @@ const TestimonialsSection = () => {
               </svg>
             </div>
 
-
-            <div className="flex justify-between items-start gap-8">
-              {/* Testimonial content */}
-              <div className="flex-1">
-                <p className="text-white text-[32px] leading-9 font-extrabold font-lato mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
+              {/* Testimonial content - Added right padding for quote space */}
+              <div className="flex-1 pr-24 md:pr-0">
+                <p className="text-white text-xl md:text-[32px] leading-snug md:leading-9 font-extrabold font-lato mb-4 md:mb-6">
                   {testimonial.text}
                 </p>
-                <p className="text-[#FFC12D] text-[20px] font-extrabold font-lato">
+                <p className="text-[#FFC12D] text-base md:text-[20px] font-extrabold font-lato">
                   {testimonial.author}
                 </p>
               </div>
 
-              {/* Profile image */}
-              <div className="absoulte bottom-0 right-0 ">
+              {/* Profile image - Hidden on mobile */}
+              <div className="hidden md:block mt-4 md:mt-0">
                 <img
                   src={testimonial.imgUrl}
                   alt={testimonial.author}

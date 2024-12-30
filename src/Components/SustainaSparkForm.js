@@ -75,23 +75,15 @@ const SustainaSparkForm = () => {
     }, [submitted]);
 
     return (
-        <div className="z-10 w-[50%] min-w-[30%] mx-auto pb-24 ">
+        <div className="z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
             <div className="rounded-3xl text-white border shadow-2xl drop-shadow-[0px_0px_9.9px_rgba(66,66,66,0.51)]">
-                <div className=' rounded-bl-3xl rounded-br-3xl bg-[#004C4C] py-2 pb-6 px-4'>
+                <div className="rounded-bl-3xl rounded-br-3xl bg-[#004C4C] py-2 pb-6 px-4">
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-2 gap-x-20 gap-y-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                             <div>
                                 <label
                                     htmlFor="participantName"
-                                    className="block text-sm text-left"
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontStyle: "normal",
-                                        fontWeight: 800,
-                                        fontSize: "16px",
-                                        color: "#FFFFFF",
-                                        padding: "8px",
-                                    }}
+                                    className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
                                     Name
                                 </label>
@@ -99,28 +91,16 @@ const SustainaSparkForm = () => {
                                     type="text"
                                     id="participantName"
                                     name="participantName"
-                                    className="w-full px-5 py-3 rounded text-black"
-                                    style={{
-                                        background: "#FFFFFF",
-                                        borderRadius: "20px",
-                                    }}
+                                    className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                     value={formData.participantName}
                                     onChange={handleChange}
                                 />
-                                {errors.participantName && <p className="text-red-500 text-xs">{errors.participantName}</p>}
+                                {errors.participantName && <p className="text-red-500 text-xs mt-1">{errors.participantName}</p>}
                             </div>
                             <div>
                                 <label
                                     htmlFor="participantAge"
-                                    className="block text-sm text-left"
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontStyle: "normal",
-                                        fontWeight: 800,
-                                        fontSize: "16px",
-                                        color: "#FFFFFF",
-                                        padding: "8px",
-                                    }}
+                                    className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
                                     Age
                                 </label>
@@ -128,28 +108,16 @@ const SustainaSparkForm = () => {
                                     type="number"
                                     id="participantAge"
                                     name="participantAge"
-                                    className="w-full px-5 py-3 rounded text-black"
-                                    style={{
-                                        background: "#FFFFFF",
-                                        borderRadius: "20px",
-                                    }}
+                                    className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                     value={formData.participantAge}
                                     onChange={handleChange}
                                 />
-                                {errors.participantAge && <p className="text-red-500 text-xs">{errors.participantAge}</p>}
+                                {errors.participantAge && <p className="text-red-500 text-xs mt-1">{errors.participantAge}</p>}
                             </div>
                             <div>
                                 <label
                                     htmlFor="participantEmail"
-                                    className="block text-sm text-left"
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontStyle: "normal",
-                                        fontWeight: 800,
-                                        fontSize: "16px",
-                                        color: "#FFFFFF",
-                                        padding: "8px",
-                                    }}
+                                    className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
                                     E-Mail
                                 </label>
@@ -157,28 +125,16 @@ const SustainaSparkForm = () => {
                                     type="email"
                                     id="participantEmail"
                                     name="participantEmail"
-                                    className="w-full px-5 py-3 rounded text-black"
-                                    style={{
-                                        background: "#FFFFFF",
-                                        borderRadius: "20px",
-                                    }}
+                                    className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                     value={formData.participantEmail}
                                     onChange={handleChange}
                                 />
-                                {errors.participantEmail && <p className="text-red-500 text-xs">{errors.participantEmail}</p>}
+                                {errors.participantEmail && <p className="text-red-500 text-xs mt-1">{errors.participantEmail}</p>}
                             </div>
                             <div>
                                 <label
                                     htmlFor="participantPhone"
-                                    className="block text-sm text-left"
-                                    style={{
-                                        fontFamily: "'Lato', sans-serif",
-                                        fontStyle: "normal",
-                                        fontWeight: 800,
-                                        fontSize: "16px",
-                                        color: "#FFFFFF",
-                                        padding: "8px",
-                                    }}
+                                    className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
                                     Mobile Number
                                 </label>
@@ -186,30 +142,18 @@ const SustainaSparkForm = () => {
                                     type="tel"
                                     id="participantPhone"
                                     name="participantPhone"
-                                    className="w-full px-5 py-3 rounded text-black"
-                                    style={{
-                                        background: "#FFFFFF",
-                                        borderRadius: "20px",
-                                    }}
+                                    className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                     value={formData.participantPhone}
                                     onChange={handleChange}
                                 />
-                                {errors.participantPhone && <p className="text-red-500 text-xs">{errors.participantPhone}</p>}
+                                {errors.participantPhone && <p className="text-red-500 text-xs mt-1">{errors.participantPhone}</p>}
                             </div>
                         </div>
 
                         <div>
                             <label
                                 htmlFor="participantSchool"
-                                className="block text-sm text-left"
-                                style={{
-                                    fontFamily: "'Lato', sans-serif",
-                                    fontStyle: "normal",
-                                    fontWeight: 800,
-                                    fontSize: "16px",
-                                    color: "#FFFFFF",
-                                    padding: "8px",
-                                }}
+                                className="block text-sm text-left font-lato font-extrabold text-white p-2"
                             >
                                 School/Organization Name
                             </label>
@@ -217,29 +161,17 @@ const SustainaSparkForm = () => {
                                 type="text"
                                 id="participantSchool"
                                 name="participantSchool"
-                                className="w-full px-5 py-3 rounded text-black"
-                                style={{
-                                    background: "#FFFFFF",
-                                    borderRadius: "20px",
-                                }}
+                                className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                 value={formData.participantSchool}
                                 onChange={handleChange}
                             />
-                            {errors.participantSchool && <p className="text-red-500 text-xs">{errors.participantSchool}</p>}
+                            {errors.participantSchool && <p className="text-red-500 text-xs mt-1">{errors.participantSchool}</p>}
                         </div>
 
                         <div>
                             <label
                                 htmlFor="reasonToJoin"
-                                className="block text-sm text-left"
-                                style={{
-                                    fontFamily: "'Lato', sans-serif",
-                                    fontStyle: "normal",
-                                    fontWeight: 800,
-                                    fontSize: "16px",
-                                    color: "#FFFFFF",
-                                    padding: "8px",
-                                }}
+                                className="block text-sm text-left font-lato font-extrabold text-white p-2"
                             >
                                 Why do you want to join the Sustaina Spark 4?
                             </label>
@@ -247,24 +179,19 @@ const SustainaSparkForm = () => {
                                 id="reasonToJoin"
                                 name="reasonToJoin"
                                 rows={4}
-                                className="w-full px-5 py-3 rounded text-black"
-                                style={{
-                                    background: "#FFFFFF",
-                                    borderRadius: "20px",
-                                }}
+                                className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
                                 value={formData.reasonToJoin}
                                 onChange={handleChange}
                             />
-                            {errors.reasonToJoin && <p className="text-red-500 text-xs">{errors.reasonToJoin}</p>}
+                            {errors.reasonToJoin && <p className="text-red-500 text-xs mt-1">{errors.reasonToJoin}</p>}
                         </div>
 
                         <button
                             type="submit"
-                            className="mt-4 flex w-full flex-row justify-center items-center p-3 gap-2.5 bg-[#1E1E1E] border border-black rounded-lg text-[24px] font-Roboto font-extrabold text-white text-base"
+                            className="mt-4 w-full p-3 bg-[#1E1E1E] border border-black rounded-lg font-roboto font-extrabold text-white text-lg sm:text-xl md:text-2xl"
                         >
                             Register
                         </button>
-
                     </form>
                 </div>
             </div>

@@ -3,8 +3,8 @@ import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div style={{ background: '#004C4C' }} className="z-0 text-white py-8 px-4 md:px-6 relative">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div style={{ background: '#004C4C' }} className="z-0 text-white py-8 px-4 sm:px-6 md:px-8 relative">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Left Section - About */}
         <div className="max-w-xl">
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
 
         {/* Right Section - Contact */}
-        <div className="md:text-right">
+        <div className="text-left sm:text-left md:text-right">
           <h2 style={{
             color: '#FFC12D',
             fontFamily: 'Lato',
@@ -69,18 +69,20 @@ const Footer = () => {
 
           {/* Contact Details */}
           <div className="space-y-4">
-            <div className="flex items-center justify-start md:justify-end gap-2">
-              <span style={{
-                fontFamily: 'Inter',
-                fontSize: '16px',
-                fontWeight: 400,
-                lineHeight: '19.36px',
-              }} className="text-white">
+            <div className="flex flex-col sm:flex-row items-center sm:justify-end gap-2">
+              <span
+                style={{
+                  fontFamily: 'Inter',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                }}
+                className="text-white flex items-center text-right sm:text-right"
+              >
                 G-9, Hemkunt Tower, 98 Nehru Place, New Delhi, 110019
+                <MapPin size={24} className="text-yellow-500 ml-2" />
               </span>
-              <MapPin size={20} className="text-yellow-500" />
             </div>
-            <div className="flex items-center justify-start md:justify-end gap-2">
+            <div className="flex items-center justify-end gap-2">
               <a
                 href="mailto:events@vong.earth"
                 style={{
@@ -95,8 +97,15 @@ const Footer = () => {
               </a>
               <Mail size={20} className="text-yellow-500" />
             </div>
-            <div className="flex items-center justify-start md:justify-end gap-2">
-              +91-xxxxx-xxxxx
+            <div className="flex items-center justify-end gap-2">
+              <span style={{
+                fontFamily: 'Inter',
+                fontSize: '16px',
+                fontWeight: 400,
+                lineHeight: '19.36px',
+              }} className="text-white">
+                +91-xxxxx-xxxxx
+              </span>
               <Phone size={20} className="text-yellow-500" />
             </div>
           </div>
