@@ -99,7 +99,7 @@ const SustainaSparkForm = () => {
                                     type="text"
                                     id="participantName"
                                     name="participantName"
-                                    className="w-full px-5 py-3 rounded"
+                                    className="w-full px-5 py-3 rounded text-black"
                                     style={{
                                         background: "#FFFFFF",
                                         borderRadius: "20px",
@@ -128,7 +128,7 @@ const SustainaSparkForm = () => {
                                     type="number"
                                     id="participantAge"
                                     name="participantAge"
-                                    className="w-full px-5 py-3 rounded"
+                                    className="w-full px-5 py-3 rounded text-black"
                                     style={{
                                         background: "#FFFFFF",
                                         borderRadius: "20px",
@@ -157,7 +157,7 @@ const SustainaSparkForm = () => {
                                     type="email"
                                     id="participantEmail"
                                     name="participantEmail"
-                                    className="w-full px-5 py-3 rounded"
+                                    className="w-full px-5 py-3 rounded text-black"
                                     style={{
                                         background: "#FFFFFF",
                                         borderRadius: "20px",
@@ -186,7 +186,7 @@ const SustainaSparkForm = () => {
                                     type="tel"
                                     id="participantPhone"
                                     name="participantPhone"
-                                    className="w-full px-5 py-3 rounded"
+                                    className="w-full px-5 py-3 rounded text-black"
                                     style={{
                                         background: "#FFFFFF",
                                         borderRadius: "20px",
@@ -217,7 +217,7 @@ const SustainaSparkForm = () => {
                                 type="text"
                                 id="participantSchool"
                                 name="participantSchool"
-                                className="w-full px-5 py-3 rounded"
+                                className="w-full px-5 py-3 rounded text-black"
                                 style={{
                                     background: "#FFFFFF",
                                     borderRadius: "20px",
@@ -247,7 +247,7 @@ const SustainaSparkForm = () => {
                                 id="reasonToJoin"
                                 name="reasonToJoin"
                                 rows={4}
-                                className="w-full px-5 py-3 rounded"
+                                className="w-full px-5 py-3 rounded text-black"
                                 style={{
                                     background: "#FFFFFF",
                                     borderRadius: "20px",
