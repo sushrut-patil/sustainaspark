@@ -6,7 +6,7 @@ const Header = ({registrationRef}) => {
         registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
     return (
-        <header className="w-full flex justify-center p-4">
+        <header className="w-full h-auto flex justify-center p-4">
             <div className="w-1/2 h-16 bg-white shadow-md rounded-full flex justify-between items-center px-6 py-2">
                 <div className="flex items-center">
                     <img
