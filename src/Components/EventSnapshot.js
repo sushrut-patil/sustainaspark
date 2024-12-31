@@ -1,6 +1,10 @@
 import React from 'react';
 
-const EventSnapshot = () => {
+const EventSnapshot = ({ registrationRef }) => {
+  const handleRegisterClick = () => {
+    console.log("hit");
+    registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
+};
   return (
     <div className="relative bg-[#004C4C] min-h-screen w-full py-1 px-4">
       {/* Title Section */}
@@ -61,7 +65,7 @@ const EventSnapshot = () => {
             Don't miss out on this chance to create real impact!
           </p>
 
-          <button className="bg-[#FFC12D] font-Roboto text-black text-base md:text-lg font-bold py-3 md:py-5 px-6 md:px-8 rounded-lg hover:bg-yellow-400 transition-colors">
+          <button onClick={handleRegisterClick} className="bg-[#FFC12D] font-Roboto text-black text-base md:text-lg font-bold py-3 md:py-5 px-6 md:px-8 rounded-lg hover:bg-yellow-400 transition-colors">
             Become a Part
           </button>
         </div>

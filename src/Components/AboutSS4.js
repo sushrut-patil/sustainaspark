@@ -1,6 +1,10 @@
 import React from 'react';
 
-const AboutSS4 = () => {
+const AboutSS4 = ({ registrationRef }) => {
+  const handleRegisterClick = () => {
+    console.log("hit");
+    registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
+};
   return (
     <div className="relative flex flex-col items-start p-4 md:p-8 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start">
@@ -16,7 +20,8 @@ const AboutSS4 = () => {
             on actionable solutions for reducing plastic waste, fostering biodiversity, and embracing minimalism.
           </p>
 
-          <button className="bg-[#FFC12D] text-black font-bold py-4 md:py-5 px-6 md:px-8 rounded-lg w-fit hover:bg-yellow-400 transition-colors">
+          <button className="bg-[#FFC12D] text-black font-bold py-4 md:py-5 px-6 md:px-8 rounded-lg w-fit hover:bg-yellow-400 transition-colors"
+          onClick={handleRegisterClick} >
             Become a Part
           </button>
         </div>

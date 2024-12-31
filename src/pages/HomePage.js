@@ -13,10 +13,10 @@ function HomePage() {
   return (
     <div className="min-h-screen">
       <HomepageHero registrationRef={registrationRef} />
-      <AboutVong/>
-      <AboutSS4/>
+      <AboutVong registrationRef={registrationRef}/>
+      <AboutSS4 registrationRef={registrationRef}/>
       <BenefitsSlider/>
-      <EventSnapshot/>
+      <EventSnapshot registrationRef={registrationRef}/>
       <TestimonialsSection/>
       <div ref={registrationRef}> 
       <RegistrationSection  />

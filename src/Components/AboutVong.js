@@ -1,6 +1,10 @@
 import React from 'react';
 
-const AboutVong = () => {
+const AboutVong = ({ registrationRef }) => {
+  const handleRegisterClick = () => {
+    console.log("hit");
+    registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="relative flex flex-col items-center p-4 md:p-8 md:pt-4 max-w-7xl mx-auto">
       <h1 className='mt-2 mb-6 md:mb-8 font-lato font-extrabold text-2xl md:text-[32px] text-center'>
@@ -22,7 +26,7 @@ const AboutVong = () => {
           <h1 className="self-start w-auto text-3xl md:text-[48px] leading-tight md:leading-[58px] font-extrabold text-[#013434] font-lato border-b-4 md:border-b-[6px] border-yellow-400">
             What is VONG?
           </h1>
-          
+
           <p className="text-lg md:text-[24px] leading-snug md:leading-[29px] font-lato">
             <span className='font-black'>VONG</span> is a global student movement anchoring on sustainable development of the world by
             transforming ideas into action. Our mission is to empower young changemakers with the tools,
@@ -31,7 +35,8 @@ const AboutVong = () => {
             resolve it with their inner fire.
           </p>
 
-          <button className="bg-[#FFC12D] text-black font-bold py-4 md:py-5 px-6 md:px-8 rounded-lg w-fit hover:bg-yellow-400 transition-colors">
+          <button className="bg-[#FFC12D] text-black font-bold py-4 md:py-5 px-6 md:px-8 rounded-lg w-fit hover:bg-yellow-400 transition-colors"
+            onClick={handleRegisterClick} >
             Become a Part
           </button>
         </div>
