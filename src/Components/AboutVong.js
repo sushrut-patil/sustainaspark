@@ -7,6 +7,19 @@ const AboutVong = ({ registrationRef }) => {
   };
   return (
     <div className="relative flex flex-col items-center p-4 md:p-8 md:pt-4 max-w-7xl mx-auto">
+      {/* Top right leaf */}
+      <img
+        src="/images/leaf.svg"
+        alt="Decorative leaf"
+        className="absolute top-[-50px] right-0 w-48 h-48 z-10 hidden md:block"
+      />
+
+      {/* Bottom left leaf */}
+      <img
+        src="/images/leaf.svg"
+        alt="Decorative leaf"
+        className="absolute bottom-[-100px] left-[-70px] w-48 h-48 z-10 hidden md:block"
+      />
       <h1 className='mt-2 mb-6 md:mb-8 font-lato font-extrabold text-2xl md:text-[32px] text-center'>
         Time Left to Register <span className='text-[#FFB400]'>!</span>
       </h1>
@@ -18,7 +31,7 @@ const AboutVong = ({ registrationRef }) => {
             alt="Students holding signs about Climate Crisis, DEI, and Sustainable Development Goals"
             className="rounded-lg w-full h-auto md:w-[550px] md:h-[500px] object-cover"
           />
-          <div className="absolute top-0 right-0 w-[160px] md:w-[226px] h-[80px] md:h-[102px] bg-white rounded-bl-lg" />
+          {/* <div className="absolute top-0 right-0 w-[160px] md:w-[226px] h-[80px] md:h-[102px] bg-white rounded-bl-lg" /> */}
         </div>
 
         {/* Content Section */}
@@ -39,6 +52,11 @@ const AboutVong = ({ registrationRef }) => {
             onClick={handleRegisterClick} >
             Become a Part
           </button>
+          <img
+            src="/images/leaf.svg"
+            alt="Decorative leaf"
+            className="absolute bottom-[-30px] right-[200px] w-48 h-48 z-10 hidden md:block"
+          />
         </div>
       </div>
     </div>

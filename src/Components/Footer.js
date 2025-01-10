@@ -4,6 +4,11 @@ import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 const Footer = () => {
   return (
     <div style={{ background: '#004C4C' }} className="z-0 text-white py-8 px-4 sm:px-6 md:px-8 relative">
+      <img
+        src="/images/leaf.svg"
+        alt="Decorative leaf"
+        className="absolute top-[-80px] left-1/2 z-10 w-60 h-60 hidden md:block"
+      />
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Left Section - About */}

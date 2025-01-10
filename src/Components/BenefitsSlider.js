@@ -46,6 +46,16 @@ const BenefitsSlider = () => {
 
       {/* Content Container */}
       <div className="container mx-auto px-4 py-6 md:py-12">
+        <img
+          src="/images/leaf.svg"
+          alt="Decorative leaf"
+          className="absolute top-[30px] left-[50px] w-60 h-60 z-10 hidden md:block"
+        />
+        <img
+          src="/images/leaf.svg"
+          alt="Decorative leaf"
+          className="absolute bottom-[0px] right-[10px] w-48 h-48 hidden md:block"
+        />
         <div className="max-w-[1200px] mx-auto relative">
           {/* Image Container */}
           <div className="relative w-full md:w-[90%] mx-auto mb-4 md:mb-8">
@@ -90,11 +100,10 @@ const BenefitsSlider = () => {
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentSlide === index
-                    ? 'w-6 md:w-8 bg-[#FFC12D]'
-                    : 'w-2 bg-[#FFC12D]/40'
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${currentSlide === index
+                  ? 'w-6 md:w-8 bg-[#FFC12D]'
+                  : 'w-2 bg-[#FFC12D]/40'
+                  }`}
                 onClick={() => goToSlide(index)}
                 role="button"
                 tabIndex={0}

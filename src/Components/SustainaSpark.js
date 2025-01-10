@@ -13,6 +13,11 @@ const SustainaSpark = () => {
                     </h4>
                 </div>
             </div>
+            <img
+                src="/images/leaf.svg"
+                alt="Decorative leaf"
+                className="absolute top-[200px] left-[50px] w-60 h-60 z-10 hidden md:block"
+            />
         </div>
     );
 };

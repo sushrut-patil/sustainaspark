@@ -33,7 +33,12 @@ const AboutSS4 = ({ registrationRef }) => {
             alt="Hand holding a globe representing sustainable future"
             className="rounded-lg w-full object-cover"
           />
-          <div className="absolute top-0 left-0 w-[150px] md:w-[226px] h-[70px] md:h-[102px] bg-white rounded" />
+          <img
+            src="/images/leaf.svg"
+            alt="Decorative leaf"
+            className="absolute bottom-[-100px] right-[-120px] w-48 h-48 z-10 hidden md:block"
+          />
+          {/* <div className="absolute top-0 left-0 w-[150px] md:w-[226px] h-[70px] md:h-[102px] bg-white rounded" /> */}
         </div>
       </div>
 

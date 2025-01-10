@@ -4,7 +4,7 @@ const EventSnapshot = ({ registrationRef }) => {
   const handleRegisterClick = () => {
     console.log("hit");
     registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
-};
+  };
   return (
     <div className="relative bg-[#004C4C] min-h-screen w-full py-1 px-4">
       {/* Title Section */}
@@ -12,7 +12,17 @@ const EventSnapshot = ({ registrationRef }) => {
         <h2 className="text-3xl md:text-[48px] font-lato font-bold text-white pb-2 mb-12 border-b-[6px] border-yellow-400">
           Event Snapshot
         </h2>
-
+        <img
+          src="/images/leaf.svg"
+          alt="Decorative leaf"
+          className="absolute top-[0] left-0 w-60 h-60 z-10 hidden md:block"
+        />
+        <img
+          src="/images/leaf.svg"
+          alt="Decorative leaf"
+          className="absolute bottom-[100px] right-[10px] w-48 h-48 hidden md:block"
+        />
+        
         {/* Event Details - Now in single line on mobile */}
         <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-36 max-w-5xl mx-auto mb-12">
           <div className="flex items-center md:flex-col md:items-center text-white">
@@ -46,12 +56,12 @@ const EventSnapshot = ({ registrationRef }) => {
         {/* Image Boxes - Kept as original */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 max-w-5xl mx-auto mb-12">
           {[1, 2, 3].map((box) => (
-            <div 
-              key={box} 
+            <div
+              key={box}
               className="bg-gray-200 bg-opacity-20 h-[234px] w-[347px] rounded-lg border-2 border-dashed border-white border-opacity-30"
             >
-              <img 
-                src="/api/placeholder/347/234" 
+              <img
+                src="/api/placeholder/347/234"
                 alt={`Event snapshot ${box}`}
                 className="w-full h-full object-cover rounded-lg"
               />

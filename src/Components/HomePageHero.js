@@ -4,8 +4,10 @@ import CountdownTimer from './Timer';
 
 const HomepageHero = ({ registrationRef }) => {
     const handleRegisterClick = () => {
-        console.log("hit");
         registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+    const handleLearnMoreClick = () => {
+        window.open("https://drive.google.com/file/d/1AxMM2zAXRaD9wPGvpcLdtYgAma3zgIio/view?usp=drive_link", "_blank");
     };
     return (
         <div className="mb-16">
@@ -41,7 +43,7 @@ const HomepageHero = ({ registrationRef }) => {
                             <button onClick={handleRegisterClick} className="bg-[#FFC12D] text-black font-bold py-4 px-6 md:py-5 md:px-8 rounded-lg w-[250px] sm:w-[200px] h-[60px] md:h-[60px] hover:bg-yellow-400 transition-colors text-xl sm:text-base">
                                 Become a Part
                             </button>
-                            <button className="text-white font-bold py-4 px-6 md:py-3 md:px-6 rounded-lg w-[250px] sm:w-[200px] h-[60px] md:h-[60px] border-[#FFC12D] border-[3px] md:border-[4px] text-xl sm:text-base">
+                            <button onClick={handleLearnMoreClick} className="text-white font-bold py-4 px-6 md:py-3 md:px-6 rounded-lg w-[250px] sm:w-[200px] h-[60px] md:h-[60px] border-[#FFC12D] border-[3px] md:border-[4px] text-xl sm:text-base">
                                 Learn More
                             </button>
                         </div>

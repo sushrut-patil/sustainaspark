@@ -25,7 +25,16 @@ const TestimonialsSection = () => {
           Real stories. Real impact.
         </p>
       </div>
-
+      <img
+        src="/images/leaf.svg"
+        alt="Decorative leaf"
+        className="absolute top-[80px] left-0 w-60 h-60 z-10 hidden md:block"
+      />
+      <img
+        src="/images/leaf.svg"
+        alt="Decorative leaf"
+        className="absolute bottom-[-50px] right-[10px] z-10 w-48 h-48 hidden md:block"
+      />
       {/* Testimonials Section */}
       <div className="container mx-auto px-4 md:px-8 py-10 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         {testimonials.map((testimonial, index) => (
