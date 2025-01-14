@@ -97,7 +97,7 @@ const BenefitsSlider = () => {
             </button>
             <button
               onClick={prevSlide}
-              className="absolute right-[70px] md:right-[70px] top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D]"
+              className="absolute right-[70px] md:right-[70px] top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D] hidden md:block"
               aria-label="Previous slide"
             >
               <ChevronLeft size={20} className="text-[#FFFFFF] md:w-6 md:h-6" />
