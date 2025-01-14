@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight,ChevronLeft } from 'lucide-react';
 
 const BenefitsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,7 +30,9 @@ const BenefitsSlider = () => {
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
-
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
@@ -92,6 +94,13 @@ const BenefitsSlider = () => {
               aria-label="Next slide"
             >
               <ChevronRight size={20} className="text-[#FFFFFF] md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={prevSlide}
+              className="absolute right-[70px] md:right-[70px] top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D]"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={20} className="text-[#FFFFFF] md:w-6 md:h-6" />
             </button>
           </div>
 
