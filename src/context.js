@@ -1,0 +1,1 @@
+export const BASE_URL = "https://test.payumoney.com/url/8I3MnJY7A5Jj";
