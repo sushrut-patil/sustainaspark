@@ -14,15 +14,14 @@ const RegistrationSection = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 max-w-3xl">
-        <div className="text-center space-y-4 md:space-y-8">
-          <p className="font-[Roboto] text-xl md:text-[32px] font-extrabold leading-tight md:leading-[37.5px] text-center text-[#004C4C]">
-            Fill out the registration form below and secure your
-            spot at SustainaSpark .4!
+      <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+        <div className="text-center py-2 sm:py-4">
+          <p className="font-[Roboto] text-lg sm:text-xl md:text-2xl lg:text-[32px] font-extrabold leading-snug sm:leading-tight md:leading-[37.5px] text-center text-[#004C4C] mx-auto max-w-[95%] sm:max-w-full">
+            Fill out the registration form below and secure your spot at SustainaSpark .4!
           </p>
         </div>
       </div>
-      <SustainaSpark/>
+      <SustainaSpark />
       <div className='bg-[#FFC12D]'>
         <SustainaSparkForm />
       </div>

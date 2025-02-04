@@ -11,14 +11,14 @@ const AboutVong = ({ registrationRef }) => {
       <img
         src="/images/leaf.svg"
         alt="Decorative leaf"
-        className="absolute top-[-50px] right-0 w-48 h-48 z-10 hidden md:block"
+        className="absolute top-[-50px] right-0 w-48 h-48 z-10 hidden lg:block"
       />
 
       {/* Bottom left leaf */}
       <img
         src="/images/leaf.svg"
         alt="Decorative leaf"
-        className="absolute bottom-[-100px] left-[-70px] w-48 h-48 z-10 hidden md:block"
+        className="absolute bottom-[-100px] left-[-70px] w-48 h-48 z-10 hidden lg:block"
       />
       <h1 className='mt-2 mb-6 md:mb-8 font-lato font-extrabold text-2xl md:text-[32px] text-center'>
         Time Left to Register <span className='text-[#FFB400]'>!</span>
@@ -55,7 +55,7 @@ const AboutVong = ({ registrationRef }) => {
           <img
             src="/images/leaf.svg"
             alt="Decorative leaf"
-            className="absolute bottom-[-30px] right-[200px] w-48 h-48 z-10 hidden md:block"
+            className="absolute bottom-[-30px] right-[200px] w-48 h-48 z-10 hidden lg:block"
           />
         </div>
       </div>

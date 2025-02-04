@@ -173,7 +173,7 @@ const SustainaSparkForm = () => {
                                 htmlFor="reasonToJoin"
                                 className="block text-sm text-left font-lato font-extrabold text-white p-2"
                             >
-                                Why do you want to join the Sustaina Spark 4?
+                                Why do you want to join the SustainaSpark 4?
                             </label>
                             <textarea
                                 id="reasonToJoin"

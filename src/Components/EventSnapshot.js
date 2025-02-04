@@ -29,12 +29,12 @@ const EventSnapshot = ({ registrationRef }) => {
         <img
           src="/images/leaf.svg"
           alt="Decorative leaf"
-          className="absolute top-[0] left-0 w-60 h-60 z-10 hidden md:block"
+          className="absolute top-[0] left-0 w-60 h-60 z-10 hidden lg:block"
         />
         <img
           src="/images/leaf.svg"
           alt="Decorative leaf"
-          className="absolute bottom-[100px] right-[10px] z-10 w-48 h-48 hidden md:block"
+          className="absolute bottom-[100px] right-[10px] z-10 w-48 h-48 hidden lg:block"
         />
         
         {/* Event Details - Now in single line on mobile */}

@@ -51,12 +51,12 @@ const BenefitsSlider = () => {
         <img
           src="/images/leaf.svg"
           alt="Decorative leaf"
-          className="absolute top-[30px] left-[50px] w-60 h-60 z-10 hidden md:block"
+          className="absolute top-[30px] left-[50px] w-60 h-60 z-10 hidden lg:block"
         />
         <img
           src="/images/leaf.svg"
           alt="Decorative leaf"
-          className="absolute bottom-[0px] right-[10px] w-48 h-48 hidden md:block"
+          className="absolute bottom-[0px] right-[10px] w-48 h-48 hidden lg:block"
         />
         <div className="max-w-[1200px] mx-auto relative">
           {/* Image Container */}
@@ -97,7 +97,7 @@ const BenefitsSlider = () => {
             </button>
             <button
               onClick={prevSlide}
-              className="absolute right-[70px] md:right-[70px] top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D] hidden md:block"
+              className="absolute right-[70px] md:right-[70px] top-[40%] -translate-y-1/2 bg-[#004C4C] rounded-full p-2 md:p-4 hover:bg-[#005C5C] transition-colors border-2 md:border-4 border-[#FFC12D] hidden lg:block"
               aria-label="Previous slide"
             >
               <ChevronLeft size={20} className="text-[#FFFFFF] md:w-6 md:h-6" />

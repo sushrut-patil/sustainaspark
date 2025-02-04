@@ -7,7 +7,7 @@ const Footer = () => {
       <img
         src="/images/leaf.svg"
         alt="Decorative leaf"
-        className="absolute top-[-80px] left-1/2 z-10 w-60 h-60 hidden md:block"
+        className="absolute top-[-80px] left-1/2 z-10 w-60 h-60 hidden lg:block"
       />
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
 
