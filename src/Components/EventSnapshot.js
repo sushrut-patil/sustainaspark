@@ -5,6 +5,20 @@ const EventSnapshot = ({ registrationRef }) => {
     console.log("hit");
     registrationRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  const images = [
+    {
+      src: "/images/sustainaspark.jpeg",
+      alt: "Event snapshot 1"
+    },
+    {
+      src: "/images/Participants.jpeg",
+      alt: "Event snapshot 2"
+    },
+    {
+      src: "/images/draft.jpeg",
+      alt: "Event snapshot 3"
+    }
+  ];
   return (
     <div className="relative bg-[#004C4C] min-h-screen w-full py-1 px-4">
       {/* Title Section */}
@@ -20,7 +34,7 @@ const EventSnapshot = ({ registrationRef }) => {
         <img
           src="/images/leaf.svg"
           alt="Decorative leaf"
-          className="absolute bottom-[100px] right-[10px] w-48 h-48 hidden md:block"
+          className="absolute bottom-[100px] right-[10px] z-10 w-48 h-48 hidden md:block"
         />
         
         {/* Event Details - Now in single line on mobile */}
@@ -54,20 +68,19 @@ const EventSnapshot = ({ registrationRef }) => {
         </div>
 
         {/* Image Boxes - Kept as original */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 max-w-5xl mx-auto mb-12">
-          {[1, 2, 3].map((box) => (
-            <div
-              key={box}
-              className="bg-gray-200 bg-opacity-20 h-[234px] w-[347px] rounded-lg border-2 border-dashed border-white border-opacity-30"
-            >
-              <img
-                src="/api/placeholder/347/234"
-                alt={`Event snapshot ${box}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12 z-0">
+      {images.map((image, index) => (
+        <div key={index} className="aspect-rectangle relative border-4 border-[#FFC12D] rounded-lg overflow-hidden">
+          <div className="w-full h-auto">
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-auto h-full object-cover"
+            />
+          </div>
         </div>
+      ))}
+    </div>
 
         {/* Call to Action - Adjusted for mobile */}
         <div className="px-4 text-center">

@@ -51,7 +51,7 @@ const SustainaSparkForm = () => {
         e.preventDefault();
         if (validateForm()) {
             try {
-                await axios.post(process.env.REACT_APP_GOOGLE_SHEET_API, formData);
+                await axios.post("https://api.sheetbest.com/sheets/44bdd877-604e-42b2-b8c9-a0fa6b783b6c", formData);
                 setSubmitted(true);
                 setFormData({
                     participantName: '',
