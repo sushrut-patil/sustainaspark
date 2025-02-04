@@ -33,11 +33,11 @@ const HomepageHero = ({ registrationRef }) => {
 
                 <div className="container mx-auto px-4 md:px-6 flex-grow flex flex-col justify-center -mt-4 md:-mt-8">
                     <div className="text-center mb-16 md:mb-24">
-                        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-lato leading-tight mb-4 md:mb-6">
+                        <h1 className="text-white text-4xl sm:text-3xl md:text-7xl lg:text-6xl font-extrabold font-lato leading-tight mb-4 md:mb-6">
                             Shape the Future, One Policy at a Time!
                         </h1>
 
-                        <p className="text-white mb-6 md:mb-8 max-w-[95%] md:max-w-[715px] mx-auto font-Roboto font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-snug">
+                        <p className="text-white mb-6 md:mb-8 max-w-[95%] md:max-w-[715px] mx-auto font-Roboto font-medium text-2xl sm:text-1xl md:text-5xl lg:text-3xl leading-snug">
                             Got big ideas? Turn them into real-world rules to save the planet — because the world needs YOUR voice!
                         </p>
 

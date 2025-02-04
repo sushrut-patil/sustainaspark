@@ -37,8 +37,8 @@ const EventSnapshot = ({ registrationRef }) => {
           className="absolute bottom-[100px] right-[10px] z-10 w-48 h-48 hidden lg:block"
         />
         
-        {/* Event Details - Now in single line on mobile */}
-        <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-36 max-w-5xl mx-auto mb-12">
+        {/* Event Details - Adjusted for Tablet */}
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-2 lg:gap-36 max-w-5xl mx-auto mb-12">
           <div className="flex items-center md:flex-col md:items-center text-white">
             <div className="bg-[#FFC12D] p-3 rounded-lg mr-4 md:mr-0 md:mb-2">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -67,20 +67,20 @@ const EventSnapshot = ({ registrationRef }) => {
           </div>
         </div>
 
-        {/* Image Boxes - Kept as original */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12 z-0">
-      {images.map((image, index) => (
-        <div key={index} className="aspect-rectangle relative border-4 border-[#FFC12D] rounded-lg overflow-hidden">
-          <div className="w-full h-auto">
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-auto h-full object-cover"
-            />
-          </div>
+        {/* Image Boxes - Adjusted for Tablet */}
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 z-0">
+          {images.map((image, index) => (
+            <div key={index} className="aspect-rectangle relative border-4 border-[#FFC12D] rounded-lg overflow-hidden">
+              <div className="w-full h-auto">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-auto h-full object-cover"
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
 
         {/* Call to Action - Adjusted for mobile */}
         <div className="px-4 text-center">
