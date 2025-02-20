@@ -70,12 +70,12 @@ const EventSnapshot = ({ registrationRef }) => {
         {/* Image Boxes - Adjusted for Tablet */}
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12 z-0">
           {images.map((image, index) => (
-            <div key={index} className="aspect-rectangle relative border-4 border-[#FFC12D] rounded-lg overflow-hidden">
+            <div key={index} className="border-4 border-[#FFC12D] rounded-lg overflow-hidden">
               <div className="w-full h-auto">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-auto h-full object-cover"
+                  className="w-auto h-auto object-cover"
                 />
               </div>
             </div>
