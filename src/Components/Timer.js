@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CountdownTimer = ({ deadline = "2025-02-20T23:59:59" }) => {
+const CountdownTimer = ({ deadline = "2025-03-01T23:59:59" }) => {
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
     const target = new Date(deadline).getTime();

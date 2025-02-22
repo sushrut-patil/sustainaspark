@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SuccessPopup from './SuccessPopup';
 
 const SustainaSparkForm = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const SustainaSparkForm = () => {
         reasonToJoin: '',
     });
 
+    const [showPopup, setShowPopup] = useState(false);
     const [errors, setErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
 
@@ -51,7 +53,7 @@ const SustainaSparkForm = () => {
         e.preventDefault();
         if (validateForm()) {
             try {
-                await axios.post("https://api.sheetbest.com/sheets/44bdd877-604e-42b2-b8c9-a0fa6b783b6c", formData);
+                axios.post("https://api.sheetbest.com/sheets/44bdd877-604e-42b2-b8c9-a0fa6b783b6c", formData);
                 setSubmitted(true);
                 setFormData({
                     participantName: '',
@@ -69,11 +71,14 @@ const SustainaSparkForm = () => {
 
     useEffect(() => {
         if (submitted) {
-            alert("Form submitted successfully! Your registration has been submitted. Thank you!");
+            setShowPopup(true);
             window.scrollTo(0, 0);
         }
     }, [submitted]);
-
+    const handleClosePopup = () => {
+        setShowPopup(false);
+        setSubmitted(false);
+    };
     return (
         <div className="z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
             <div className="rounded-3xl text-white border shadow-2xl drop-shadow-[0px_0px_9.9px_rgba(66,66,66,0.51)]">
@@ -195,6 +200,11 @@ const SustainaSparkForm = () => {
                     </form>
                 </div>
             </div>
+            <SuccessPopup
+                isOpen={showPopup}
+                onClose={handleClosePopup}
+                participantName={formData.participantName}
+            />
         </div>
     );
 };
