@@ -75,7 +75,7 @@ const SustainaSparkForm = () => {
         if (validateForm()) {
             setIsLoading(true);
             try {
-                await axios.post("http://139.84.152.71:8081/ss-api/submit-data", formData);
+                await axios.post("https://139.84.152.71:8081/ss-api/submit-data", formData);
                 setSubmitted(true);
                 setFormData({
                     participantName: '',

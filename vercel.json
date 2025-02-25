@@ -1,8 +1,0 @@
-{
-    "routes": [
-      {
-        "src": "/api/submit-data",
-        "dest": "http://139.84.152.71:8081/ss-api/submit-data"
-      }
-    ]
-  }
