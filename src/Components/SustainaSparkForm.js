@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SuccessPopup from './SuccessPopup';
 
+const LoadingSpinner = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white p-8 rounded-lg flex flex-col items-center">
+        <div className="w-12 h-12 border-4 border-[#004C4C] border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p className="text-[#004C4C] font-bold">Processing Please Wait...</p>
+      </div>
+    </div>
+);
+
 const SustainaSparkForm = () => {
+
     const [formData, setFormData] = useState({
         participantName: '',
         participantAge: '',
@@ -10,11 +20,21 @@ const SustainaSparkForm = () => {
         participantPhone: '',
         participantSchool: '',
         reasonToJoin: '',
+        source: '',
+        referral: ''
     });
 
     const [showPopup, setShowPopup] = useState(false);
     const [errors, setErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const sourceOptions = [
+        'Social media',
+        'Referral',
+        'School/university',
+        'WhatsApp/Telegram groups',
+        'Unstop'
+    ];
 
     const validateForm = () => {
         const newErrors = {};
@@ -46,14 +66,16 @@ const SustainaSparkForm = () => {
         setFormData((prevState) => ({
             ...prevState,
             [name]: value,
+            ...(name === 'source' && value !== 'Referral' ? { referral: '' } : {})
         }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
+            setIsLoading(true);
             try {
-                axios.post("https://api.sheetbest.com/sheets/44bdd877-604e-42b2-b8c9-a0fa6b783b6c", formData);
+                await axios.post("http://139.84.152.71:8081/ss-api/submit-data", formData);
                 setSubmitted(true);
                 setFormData({
                     participantName: '',
@@ -62,9 +84,13 @@ const SustainaSparkForm = () => {
                     participantPhone: '',
                     participantSchool: '',
                     reasonToJoin: '',
+                    source: '',
+                    referral: ''
                 });
             } catch (error) {
                 console.error("Error submitting data:", error);
+            } finally {
+                setIsLoading(false);
             }
         }
     };
@@ -81,6 +107,7 @@ const SustainaSparkForm = () => {
     };
     return (
         <div className="z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            {isLoading && <LoadingSpinner />}
             <div className="rounded-3xl text-white border shadow-2xl drop-shadow-[0px_0px_9.9px_rgba(66,66,66,0.51)]">
                 <div className="rounded-bl-3xl rounded-br-3xl bg-[#004C4C] py-2 pb-6 px-4">
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -90,7 +117,7 @@ const SustainaSparkForm = () => {
                                     htmlFor="participantName"
                                     className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
-                                    Name
+                                    Name<span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -107,7 +134,7 @@ const SustainaSparkForm = () => {
                                     htmlFor="participantAge"
                                     className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
-                                    Age
+                                    Age<span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="number"
@@ -124,7 +151,7 @@ const SustainaSparkForm = () => {
                                     htmlFor="participantEmail"
                                     className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
-                                    E-Mail
+                                    E-Mail<span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="email"
@@ -141,7 +168,7 @@ const SustainaSparkForm = () => {
                                     htmlFor="participantPhone"
                                     className="block text-sm text-left font-lato font-extrabold text-white p-2"
                                 >
-                                    Mobile Number
+                                    Mobile Number<span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="tel"
@@ -153,6 +180,47 @@ const SustainaSparkForm = () => {
                                 />
                                 {errors.participantPhone && <p className="text-red-500 text-xs mt-1">{errors.participantPhone}</p>}
                             </div>
+                            <div>
+                                <label
+                                    htmlFor="source"
+                                    className="block text-sm text-left font-lato font-extrabold text-white p-2"
+                                >
+                                    Where did you hear about us?
+                                </label>
+                                <select
+                                    id="source"
+                                    name="source"
+                                    className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
+                                    value={formData.source}
+                                    onChange={handleChange}
+                                >
+                                    <option value="">Select an option</option>
+                                    {sourceOptions.map((option) => (
+                                        <option key={option} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {formData.source === 'Referral' && (
+                                <div>
+                                    <label
+                                        htmlFor="referral"
+                                        className="block text-sm text-left font-lato font-extrabold text-white p-2"
+                                    >
+                                        Who referred you?
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="referral"
+                                        name="referral"
+                                        className="w-full px-5 py-3 rounded-[20px] text-black bg-white"
+                                        value={formData.referral}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            )}
                         </div>
 
                         <div>
@@ -160,7 +228,7 @@ const SustainaSparkForm = () => {
                                 htmlFor="participantSchool"
                                 className="block text-sm text-left font-lato font-extrabold text-white p-2"
                             >
-                                School/Organization Name
+                                School/Organization Name<span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -178,7 +246,7 @@ const SustainaSparkForm = () => {
                                 htmlFor="reasonToJoin"
                                 className="block text-sm text-left font-lato font-extrabold text-white p-2"
                             >
-                                Why do you want to join the SustainaSpark 4?
+                                Why do you want to join the SustainaSpark 4?<span className="text-red-500">*</span>
                             </label>
                             <textarea
                                 id="reasonToJoin"

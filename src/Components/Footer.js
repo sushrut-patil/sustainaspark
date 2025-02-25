@@ -109,7 +109,7 @@ const Footer = () => {
                 fontWeight: 400,
                 lineHeight: '19.36px',
               }} className="text-white">
-                +91-xxxxx-xxxxx
+                +91-98103-03938
               </span>
               <Phone size={20} className="text-yellow-500" />
             </div>

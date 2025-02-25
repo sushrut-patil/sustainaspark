@@ -8,7 +8,7 @@ const HomepageHero = ({ registrationRef }) => {
     };
 
     const handleLearnMoreClick = () => {
-        window.open("https://drive.google.com/file/d/1AxMM2zAXRaD9wPGvpcLdtYgAma3zgIio/view?usp=drive_link", "_blank");
+        window.open("https://drive.google.com/file/d/1je1fZr75eWeN-OGDp46hdqrNQD8tK1ch/view?usp=sharing", "_blank");
     };
 
     return (

@@ -37,7 +37,7 @@ const AboutSS4 = ({ registrationRef }) => {
             <img
               src="/images/leaf.svg"
               alt="Decorative leaf"
-              className="absolute bottom-[-100px] right-[-120px] w-48 h-48 z-10 hidden lg:block"
+              className="absolute bottom-[-100px] right-[-10px] w-48 h-48 z-10 hidden lg:block"
             />
           </div>
         </div>
